@@ -9,25 +9,18 @@
 
 Config parsers for:
 
-👉 [YAML](https://yaml.org/)
-
-👉 [TOML](https://toml.io/)
-
-👉 [JSONC](https://github.com/microsoft/node-jsonc-parser)
-
-👉 [JSON5](https://json5.org/)
+✅ [YAML](https://yaml.org/) (with [js-yaml](https://github.com/nodeca/js-yaml)) <br>
+✅ [TOML](https://toml.io/) (with [js-toml](https://github.com/sunnyadn/js-toml) <br>
+✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [jsonc-parser](https://github.com/microsoft/node-jsonc-parser)) <br>
+✅ [JSON5](https://json5.org/) (with [json5](https://github.com/json5/json5)) <br>
 
 With perfect bundling:
 
-✅ Types exported out of the box
-
-✅ Zero config and compat redistribution
-
-✅ Dual ESM/CJS build
-
-✅ Consistent and tested API
-
-✅ Handpicked best options (bundle+perf)
+✨ Types exported out of the box <br>
+✨ Zero config and compact redistribution <br>
+✨ Dual ESM/CJS build <br>
+✨ Consistent and tested API <br>
+✨ Handpicked best libraries (bundle+perf) <br>
 
 ## Usage
 
@@ -85,7 +78,7 @@ const {
 ## Development
 
 - Clone this repository
-- Install latest LTS version of [Node.js](https://nodejs.org/en/)
+- Install the latest LTS version of [Node.js](https://nodejs.org/en/)
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 - Install dependencies using `pnpm install`
 - Run interactive tests using `pnpm dev`
