@@ -10,6 +10,6 @@ import { parse } from "toml";
  * @param text The TOML string to parse.
  * @returns The JavaScript value converted from the TOML string.
  */
-export function parseToml<T = unknown>(text: string): T {
+export function parseTOML<T = unknown>(text: string): T {
   return parse(text) as T;
 }

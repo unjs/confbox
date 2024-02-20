@@ -60,14 +60,14 @@ Import:
 import {
   parseJSON5,
   parseJSONC,
-  parseToml,
-  parseYaml,
-  stringifyYaml,
+  parseTOML,
+  parseYAML,
+  stringifyYAML,
 } from "confbox";
 
 // Using individual builds
-import { parseYaml, stringifyYaml } from "confbox/yaml";
-import { parseToml } from "confbox/toml";
+import { parseYAML, stringifyYAML } from "confbox/yaml";
+import { parseTOML } from "confbox/toml";
 import { parseJSON5 } from "confbox/json5";
 import { parseJSONC } from "confbox/jsonc";
 
@@ -75,9 +75,9 @@ import { parseJSONC } from "confbox/jsonc";
 const {
   parseJSON5,
   parseJSONC,
-  parseToml,
-  parseYaml,
-  stringifyYaml,
+  parseTOML,
+  parseYAML,
+  stringifyYAML,
 } = require("confbox");
 ```
 
@@ -91,18 +91,17 @@ Converts a [JSON5](https://json5.org/) string into an object.
 
 Converts a [JSONC](https://github.com/microsoft/node-jsonc-parser) string into an object.
 
-### `parseToml(text)`
+### `parseTOML(text)`
 
 Converts a [TOML](https://toml.io/) string into an object.
 
-### `parseYaml(text, options?)`
+### `parseYAML(text, options?)`
 
 Converts a [YAML](https://yaml.org/) string into an object.
 
-### `stringifyYaml(value, options?)`
+### `stringifyYAML(value, options?)`
 
 Converts a JavaScript value to a [YAML](https://yaml.org/) string.
-
 
 <!-- /automd -->
 

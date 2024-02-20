@@ -18,9 +18,9 @@ import { load, dump } from "js-yaml";
  * @param options Parsing options.
  * @returns The JavaScript value converted from the YAML string.
  */
-export function parseYaml<T = unknown>(
+export function parseYAML<T = unknown>(
   text: string,
-  options?: ParseYamlOptions,
+  options?: parseYAMLOptions,
 ): T {
   return load(text, options) as T;
 }
@@ -32,16 +32,16 @@ export function parseYaml<T = unknown>(
  * @param options
  * @returns The YAML string converted from the JavaScript value.
  */
-export function stringifyYaml(
+export function stringifyYAML(
   value: any,
-  options?: StringifyYamlOptions,
+  options?: stringifyYAMLOptions,
 ): string {
   return dump(value, options);
 }
 
 // --- Types ---
 
-export interface ParseYamlOptions {
+export interface parseYAMLOptions {
   /** string to be used as a file path in error/warning messages. */
   filename?: string | undefined;
   /** function to call on warning messages. */
@@ -54,7 +54,7 @@ export interface ParseYamlOptions {
   listener?(this: any, eventType: any, state: any): void;
 }
 
-export interface StringifyYamlOptions {
+export interface stringifyYAMLOptions {
   /** indentation width to use (in spaces). */
   indent?: number | undefined;
   /** when true, will not add an indentation level to array elements */

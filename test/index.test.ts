@@ -33,7 +33,7 @@ describe("confbox", () => {
 
   describe("toml", () => {
     it("parse fixture", () => {
-      expect(confbox.parseToml(fixtures.toml)).toMatchObject(
+      expect(confbox.parseTOML(fixtures.toml)).toMatchObject(
         expectedObjWithDate,
       );
     });
@@ -41,14 +41,14 @@ describe("confbox", () => {
 
   describe("yaml", () => {
     it("parse fixture", () => {
-      expect(confbox.parseYaml(fixtures.yaml)).toMatchObject(
+      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(
         expectedObjWithDate,
       );
     });
 
     it("stringify", () => {
       expect(
-        confbox.parseYaml(confbox.stringifyYaml(expectedObjWithDate)),
+        confbox.parseYAML(confbox.stringifyYAML(expectedObjWithDate)),
       ).toMatchObject(expectedObjWithDate);
     });
   });

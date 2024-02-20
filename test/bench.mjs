@@ -27,7 +27,7 @@ function defineBench(groupName, benchs) {
 
 defineBench("yaml", {
   confbox: () => {
-    confbox.parseYaml(fixtures.yaml);
+    confbox.parseYAML(fixtures.yaml);
   },
   "eemeli/yaml": () => {
     yaml.parse(fixtures.yaml);
@@ -39,7 +39,7 @@ defineBench("yaml", {
 
 defineBench("toml", {
   confbox: () => {
-    confbox.parseToml(fixtures.toml);
+    confbox.parseTOML(fixtures.toml);
   },
   "BinaryMuse/toml-node": () => {
     nodeToml.parse(fixtures.toml);
