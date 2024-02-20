@@ -1,6 +1,6 @@
-import { parse } from "toml";
+import { parse } from "smol-toml";
 
-// Source: https://github.com/BinaryMuse/toml-node
+// Source: https://github.com/squirrelchat/smol-toml
 
 /**
  * Converts a [TOML](https://toml.io/) string into an object.

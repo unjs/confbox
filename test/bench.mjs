@@ -2,6 +2,7 @@ import { bench, baseline, run, group } from "mitata";
 
 import nodeToml from "toml";
 import * as jsToml from "js-toml";
+import * as smolToml from "smol-toml";
 import jsYaml from "js-yaml";
 import yaml from "yaml";
 import * as json5 from "json5";
@@ -46,6 +47,9 @@ defineBench("toml", {
   },
   "sunnyadn/js-toml": () => {
     jsToml.load(fixtures.toml);
+  },
+  "squirrelchat/smol-toml": () => {
+    smolToml.parse(fixtures.toml);
   },
 });
 

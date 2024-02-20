@@ -12,7 +12,7 @@ Config parsers for:
 
 ✅ [YAML](https://yaml.org/) (with [`js-yaml`](https://github.com/nodeca/js-yaml))
 
-✅ [TOML](https://toml.io/) (with [`toml`](https://github.com/BinaryMuse/toml-node)
+✅ [TOML](https://toml.io/) (with [`smol-toml`](https://github.com/squirrelchat/smol-toml))
 
 ✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [`jsonc-parser`](https://github.com/microsoft/node-jsonc-parser))
 

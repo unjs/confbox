@@ -47,6 +47,9 @@ devDependencies:
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
+  smol-toml:
+    specifier: ^1.1.4
+    version: 1.1.4
   toml:
     specifier: ^3.0.0
     version: 3.0.0
@@ -4478,6 +4481,11 @@ packages:
   /slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /smol-toml@1.1.4:
+    resolution: {integrity: sha512-Y0OT8HezWsTNeEOSVxDnKOW/AyNXHQ4BwJNbAXlLTF5wWsBvrcHhIkE5Rf8kQMLmgf7nDX3PVOlgC6/Aiggu3Q==}
+    engines: {node: '>= 18', pnpm: '>= 8'}
     dev: true
 
   /source-map-js@1.0.2:
