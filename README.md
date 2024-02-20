@@ -9,10 +9,13 @@
 
 Config parsers for:
 
-✅ [YAML](https://yaml.org/) (with [js-yaml](https://github.com/nodeca/js-yaml)) <br>
-✅ [TOML](https://toml.io/) (with [js-toml](https://github.com/sunnyadn/js-toml) <br>
-✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [jsonc-parser](https://github.com/microsoft/node-jsonc-parser)) <br>
-✅ [JSON5](https://json5.org/) (with [json5](https://github.com/json5/json5)) <br>
+✅ [YAML](https://yaml.org/) (with [`js-yaml`](https://github.com/nodeca/js-yaml))
+
+✅ [TOML](https://toml.io/) (with [`toml`](https://github.com/BinaryMuse/toml-node)
+
+✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [`jsonc-parser`](https://github.com/microsoft/node-jsonc-parser))
+
+✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
 
 With perfect bundling:
 
@@ -96,7 +99,6 @@ Converts a [YAML](https://yaml.org/) string into an object.
 ### `stringifyYaml(value, options?)`
 
 Converts a JavaScript value to a [YAML](https://yaml.org/) string.
-
 
 <!-- /automd -->
 

@@ -1,6 +1,6 @@
 import { parse } from "toml";
 
-// Source: https://github.com/sunnyadn/js-toml
+// Source: https://github.com/BinaryMuse/toml-node
 
 /**
  * Converts a [TOML](https://toml.io/) string into an object.
