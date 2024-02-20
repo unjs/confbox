@@ -25,6 +25,9 @@ With perfect bundling:
 ✨ Consistent and tested API <br>
 ✨ Handpicked best libraries (bundle+perf) <br>
 
+> [!NOTE]
+> Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
+
 ## Usage
 
 Install package:
@@ -99,7 +102,6 @@ Converts a [YAML](https://yaml.org/) string into an object.
 ### `stringifyYaml(value, options?)`
 
 Converts a JavaScript value to a [YAML](https://yaml.org/) string.
-
 
 <!-- /automd -->
 
