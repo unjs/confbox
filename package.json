@@ -74,6 +74,7 @@
     "jsonc-parser": "^3.2.1",
     "mitata": "^0.1.11",
     "prettier": "^3.2.5",
+    "smol-toml": "^1.1.4",
     "toml": "^3.0.0",
     "typescript": "^5.3.3",
     "unbuild": "^2.0.0",
