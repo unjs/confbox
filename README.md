@@ -1,9 +1,10 @@
 # confbox
 
-<!-- automd:badges -->
+<!-- automd:badges color=yellow no-npmDownloads bundlephobia packagephobia -->
 
-[![npm version](https://flat.badgen.net/npm/v/confbox)](https://npmjs.com/package/confbox)
-[![npm downloads](https://flat.badgen.net/npm/dm/confbox)](https://npmjs.com/package/confbox)
+[![npm version](https://flat.badgen.net/npm/v/confbox?color=yellow)](https://npmjs.com/package/confbox)
+[![bundle size](https://flat.badgen.net/bundlephobia/minzip/confbox?color=yellow)](https://bundlephobia.com/package/confbox)
+[![install size](https://flat.badgen.net/packagephobia/publish/confbox?color=yellow)](https://packagephobia.com/result?p=confbox)
 
 <!-- /automd -->
 
@@ -19,11 +20,15 @@ Config parsers for:
 
 With perfect bundling:
 
-✨ Types exported out of the box <br>
-✨ Zero config and compact redistribution <br>
-✨ Dual ESM/CJS build <br>
-✨ Consistent and tested API <br>
-✨ Handpicked best libraries (bundle+perf) <br>
+✨ Types exported out of the box
+
+✨ Zero config and compact redistribution
+
+✨ Dual ESM/CJS build
+
+✨ Consistent and tested API
+
+✨ Handpicked best libraries (bundle+perf)
 
 > [!NOTE]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
@@ -55,31 +60,45 @@ bun install confbox
 
 Import:
 
+<!-- automd:jsimport cjs cdn src="./src/index.ts" -->
+
+**ESM** (Node.js, Bun)
+
 ```js
-// ESM (tree-shakable)
 import {
   parseJSON5,
   parseJSONC,
-  parseTOML,
   parseYAML,
   stringifyYAML,
+  parseTOML,
 } from "confbox";
+```
 
-// Using individual builds
-import { parseYAML, stringifyYAML } from "confbox/yaml";
-import { parseTOML } from "confbox/toml";
-import { parseJSON5 } from "confbox/json5";
-import { parseJSONC } from "confbox/jsonc";
+**CommonJS** (Legacy Node.js)
 
-// CommonJS
+```js
 const {
   parseJSON5,
   parseJSONC,
-  parseTOML,
   parseYAML,
   stringifyYAML,
+  parseTOML,
 } = require("confbox");
 ```
+
+**CDN** (Deno, Bun and Browsers)
+
+```js
+import {
+  parseJSON5,
+  parseJSONC,
+  parseYAML,
+  stringifyYAML,
+  parseTOML,
+} from "https://esm.sh/confbox";
+```
+
+<!-- /automd -->
 
 <!-- automd:jsdocs src="./src/index" -->
 
@@ -105,16 +124,40 @@ Converts a JavaScript value to a [YAML](https://yaml.org/) string.
 
 <!-- /automd -->
 
-## Development
+<!-- automd:fetch url="gh:unjs/.github/main/snippets/readme-contrib-node-pnpm.md" -->
+
+## Contribution
+
+<details>
+  <summary>Local development</summary>
 
 - Clone this repository
 - Install the latest LTS version of [Node.js](https://nodejs.org/en/)
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 - Install dependencies using `pnpm install`
-- Run interactive tests using `pnpm dev`
+- Run tests using `pnpm dev` or `pnpm test`
+
+</details>
+
+<!-- /automd -->
 
 ## License
 
-Made with 💛
+<!-- automd:contributors license=MIT author=pi0 -->
 
-Published under [MIT License](./LICENSE).
+Published under the [MIT](https://github.com/unjs/confbox/blob/main/LICENSE) license.
+Made by [@pi0](https://github.com/pi0) and [community](https://github.com/unjs/confbox/graphs/contributors) 💛
+<br><br>
+<a href="https://github.com/unjs/confbox/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=unjs/confbox" />
+</a>
+
+<!-- /automd -->
+
+<!-- automd:with-automd -->
+
+---
+
+_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Tue Feb 20 2024)_
+
+<!-- /automd -->
