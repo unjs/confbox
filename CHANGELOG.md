@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.1...v0.1.2)
+
+### 🚀 Enhancements
+
+- Switch to smol-toml for toml parsing ([#2](https://github.com/unjs/confbox/pull/2))
+
+### 🏡 Chore
+
+- Apply automated updates ([8a14b5f](https://github.com/unjs/confbox/commit/8a14b5f))
+- Update automd ([bf48062](https://github.com/unjs/confbox/commit/bf48062))
+
+### ❤️ Contributors
+
+- Uncenter 
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.1
 
 
