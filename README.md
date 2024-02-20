@@ -75,6 +75,31 @@ const {
 } = require("confbox");
 ```
 
+<!-- automd:jsdocs src="./src/index" -->
+
+### `parseJSON5(text, options?)`
+
+Converts a [JSON5](https://json5.org/) string into an object.
+
+### `parseJSONC(text, options?)`
+
+Converts a [JSONC](https://github.com/microsoft/node-jsonc-parser) string into an object.
+
+### `parseToml(text)`
+
+Converts a [TOML](https://toml.io/) string into an object.
+
+### `parseYaml(text, options?)`
+
+Converts a [YAML](https://yaml.org/) string into an object.
+
+### `stringifyYaml(value, options?)`
+
+Converts a JavaScript value to a [YAML](https://yaml.org/) string.
+
+
+<!-- /automd -->
+
 ## Development
 
 - Clone this repository
