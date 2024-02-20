@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^1.3.0
     version: 1.3.0(vitest@1.3.0)
   automd:
-    specifier: ^0.3.0
-    version: 0.3.0
+    specifier: ^0.3.2
+    version: 0.3.2
   changelogen:
     specifier: ^0.5.5
     version: 0.5.5
@@ -1371,8 +1371,8 @@ packages:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
     dev: true
 
-  /automd@0.3.0:
-    resolution: {integrity: sha512-2gTvYIS03EjbbwJVZ13TDm2fZmoFWy9E7YcX/g4MlZECeFen1Dh94etUqz8yScFEYUacjcxLh+dpfxKohj//yg==}
+  /automd@0.3.2:
+    resolution: {integrity: sha512-m7Fwh3dQtzYPnajmqMUpVFi4E30blM1HnB+ztk8WD9cSgIGk5Vfn8Po7kf7Xu9Y4/mVgQ8kMsOkrjTr8dF53zA==}
     hasBin: true
     dependencies:
       '@parcel/watcher': 2.4.0
@@ -1384,6 +1384,7 @@ packages:
       didyoumean2: 6.0.1
       globby: 14.0.1
       magic-string: 0.30.7
+      mlly: 1.5.0
       ofetch: 1.3.3
       omark: 0.1.0
       pathe: 1.1.2
