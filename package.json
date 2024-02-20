@@ -1,7 +1,15 @@
 {
   "name": "confbox",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Compact and high quality YAML, TOML, JSONC and JSON5 parsers",
+  "keywords": [
+    "yaml",
+    "toml",
+    "jsonc",
+    "json5",
+    "unjs",
+    "config"
+  ],
   "repository": "unjs/confbox",
   "license": "MIT",
   "sideEffects": false,
