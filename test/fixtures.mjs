@@ -1,9 +1,9 @@
-export const yaml = /* yaml */`
+export const yaml = /* yaml */ `
 title: "Example"
 owner:
   name: "Preston-Werner"
   dob: 1979-05-27T07:32:00-08:00 # dates
-`.trim()
+`.trim();
 
 export const toml = /* toml */ `
 title = "Example"
@@ -11,7 +11,7 @@ title = "Example"
 [owner]
 name = "Preston-Werner"
 dob = 1979-05-27T07:32:00-08:00 # dates
-  `.trim()
+  `.trim();
 
 export const json5 = /* json5 */ `
 {
@@ -22,7 +22,7 @@ export const json5 = /* json5 */ `
     dob: '1979-05-27T07:32:00-08:00'
   }
 }
-`.trim()
+`.trim();
 
 export const jsonc = /* jsonc */ `
 {
@@ -32,4 +32,4 @@ export const jsonc = /* jsonc */ `
     "dob": "1979-05-27T07:32:00-08:00" // dates
   }
 }
-`.trim()
+`.trim();
