@@ -41,7 +41,7 @@ Install package:
 
 ```sh
 # ✨ Auto-detect
-npx nypm i confbox
+npx nypm install confbox
 
 # npm
 npm install confbox
