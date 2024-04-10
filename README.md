@@ -120,7 +120,7 @@ Converts a [TOML](https://toml.io/) string into an object.
 
 Converts a [YAML](https://yaml.org/) string into an object.
 
-### `stringifyTOML(text)`
+### `stringifyTOML(value)`
 
 Converts a JavaScript value to a [TOML](https://toml.io/) string.
 
