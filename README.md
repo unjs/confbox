@@ -2,9 +2,8 @@
 
 <!-- automd:badges color=yellow no-npmDownloads bundlephobia packagephobia -->
 
-[![npm version](https://flat.badgen.net/npm/v/confbox?color=yellow)](https://npmjs.com/package/confbox)
-[![bundle size](https://flat.badgen.net/bundlephobia/minzip/confbox?color=yellow)](https://bundlephobia.com/package/confbox)
-[![install size](https://flat.badgen.net/packagephobia/publish/confbox?color=yellow)](https://packagephobia.com/result?p=confbox)
+[![npm version](https://img.shields.io/npm/v/confbox?color=yellow)](https://npmjs.com/package/confbox)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/confbox?color=yellow)](https://bundlephobia.com/package/confbox)
 
 <!-- /automd -->
 
@@ -41,7 +40,7 @@ Install package:
 
 ```sh
 # ✨ Auto-detect
-npx nypm i confbox
+npx nypm install confbox
 
 # npm
 npm install confbox
@@ -165,10 +164,6 @@ Made by [@pi0](https://github.com/pi0) and [community](https://github.com/unjs/c
 
 ---
 
-<<<<<<< HEAD
 _🤖 auto updated with [automd](https://automd.unjs.io)_
-=======
-_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Wed Apr 10 2024)_
->>>>>>> 2db0d78 (wip)
 
 <!-- /automd -->
