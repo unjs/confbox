@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.4...v0.1.5)
+
+### 🩹 Fixes
+
+- Fix `stringifyTOML` case ([a3b19b3](https://github.com/unjs/confbox/commit/a3b19b3))
+
+### 🏡 Chore
+
+- Apply automated updates ([1475b7f](https://github.com/unjs/confbox/commit/1475b7f))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.4
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.3...v0.1.4)
