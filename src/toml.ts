@@ -1,4 +1,4 @@
-import { parse } from "smol-toml";
+import { parse, stringify } from "smol-toml";
 
 // Source: https://github.com/squirrelchat/smol-toml
 
@@ -12,4 +12,15 @@ import { parse } from "smol-toml";
  */
 export function parseTOML<T = unknown>(text: string): T {
   return parse(text) as T;
+}
+
+/**
+ * Converts a JavaScript value to a [TOML](https://toml.io/) string.
+ *
+ * @param value
+ * @param options
+ * @returns The YAML string converted from the JavaScript value.
+ */
+export function stringifyToml<T = unknown>(text: string): T {
+  return stringify(text) as T;
 }

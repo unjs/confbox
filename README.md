@@ -71,6 +71,7 @@ import {
   parseYAML,
   stringifyYAML,
   parseTOML,
+  stringifyToml,
 } from "confbox";
 ```
 
@@ -83,6 +84,7 @@ const {
   parseYAML,
   stringifyYAML,
   parseTOML,
+  stringifyToml,
 } = require("confbox");
 ```
 
@@ -95,6 +97,7 @@ import {
   parseYAML,
   stringifyYAML,
   parseTOML,
+  stringifyToml,
 } from "https://esm.sh/confbox";
 ```
 
@@ -117,6 +120,10 @@ Converts a [TOML](https://toml.io/) string into an object.
 ### `parseYAML(text, options?)`
 
 Converts a [YAML](https://yaml.org/) string into an object.
+
+### `stringifyToml(text)`
+
+Converts a JavaScript value to a [TOML](https://toml.io/) string.
 
 ### `stringifyYAML(value, options?)`
 
@@ -158,6 +165,10 @@ Made by [@pi0](https://github.com/pi0) and [community](https://github.com/unjs/c
 
 ---
 
+<<<<<<< HEAD
 _🤖 auto updated with [automd](https://automd.unjs.io)_
+=======
+_🤖 auto updated with [automd](https://automd.unjs.io) (last updated: Wed Apr 10 2024)_
+>>>>>>> 2db0d78 (wip)
 
 <!-- /automd -->
