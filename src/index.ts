@@ -7,4 +7,4 @@ export type { JSONCParseError, JSONCParseOptions } from "./jsonc";
 export { parseYAML, stringifyYAML } from "./yaml";
 export type { parseYAMLOptions, stringifyYAMLOptions } from "./yaml";
 
-export { parseTOML, stringifyToml } from "./toml";
+export { parseTOML, stringifyTOML } from "./toml";

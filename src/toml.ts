@@ -21,6 +21,6 @@ export function parseTOML<T = unknown>(text: string): T {
  * @param options
  * @returns The YAML string converted from the JavaScript value.
  */
-export function stringifyToml<T = unknown>(text: string): T {
+export function stringifyTOML<T = unknown>(text: string): T {
   return stringify(text) as T;
 }

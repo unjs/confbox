@@ -70,7 +70,7 @@ import {
   parseYAML,
   stringifyYAML,
   parseTOML,
-  stringifyToml,
+  stringifyTOML,
 } from "confbox";
 ```
 
@@ -83,7 +83,7 @@ const {
   parseYAML,
   stringifyYAML,
   parseTOML,
-  stringifyToml,
+  stringifyTOML,
 } = require("confbox");
 ```
 
@@ -96,7 +96,7 @@ import {
   parseYAML,
   stringifyYAML,
   parseTOML,
-  stringifyToml,
+  stringifyTOML,
 } from "https://esm.sh/confbox";
 ```
 
@@ -120,7 +120,7 @@ Converts a [TOML](https://toml.io/) string into an object.
 
 Converts a [YAML](https://yaml.org/) string into an object.
 
-### `stringifyToml(text)`
+### `stringifyTOML(text)`
 
 Converts a JavaScript value to a [TOML](https://toml.io/) string.
 
