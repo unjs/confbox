@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.3...v0.1.4)
+
+### 🚀 Enhancements
+
+- Add `stringifyToml` ([22c3c1f](https://github.com/unjs/confbox/commit/22c3c1f))
+
+### 🏡 Chore
+
+- **release:** V0.1.3 ([993fdfc](https://github.com/unjs/confbox/commit/993fdfc))
+- Update repo ([b421a38](https://github.com/unjs/confbox/commit/b421a38))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.3
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.2...v0.1.3)
