@@ -52,4 +52,16 @@ describe("confbox", () => {
       ).toMatchObject(expectedObjWithDate);
     });
   });
+
+  describe("json", () => {
+    it("parse fixture", () => {
+      expect(confbox.parseJSON(fixtures.json)).toMatchObject(expectedObj);
+    });
+
+    it("stringify", () => {
+      expect(confbox.stringifyJSON(confbox.parseJSON(fixtures.json))).toBe(
+        fixtures.json,
+      );
+    });
+  });
 });

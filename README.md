@@ -17,6 +17,8 @@ Config parsers for:
 
 ✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
 
+✅ [JSON](https://www.json.org/json-en.html) (with format and whitespace preservation)
+
 With perfect bundling:
 
 ✨ Types exported out of the box
@@ -28,6 +30,8 @@ With perfect bundling:
 ✨ Consistent and tested API
 
 ✨ Handpicked best libraries (bundle+perf)
+
+✨ Auto-preserves the indentation and whitespace.
 
 > [!NOTE]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
@@ -71,6 +75,8 @@ import {
   stringifyYAML,
   parseTOML,
   stringifyTOML,
+  parseJSON,
+  stringifyJSON,
 } from "confbox";
 ```
 
@@ -84,6 +90,8 @@ const {
   stringifyYAML,
   parseTOML,
   stringifyTOML,
+  parseJSON,
+  stringifyJSON,
 } = require("confbox");
 ```
 
@@ -97,12 +105,20 @@ import {
   stringifyYAML,
   parseTOML,
   stringifyTOML,
+  parseJSON,
+  stringifyJSON,
 } from "https://esm.sh/confbox";
 ```
 
 <!-- /automd -->
 
 <!-- automd:jsdocs src="./src/index" -->
+
+### `parseJSON(text, options?)`
+
+Converts a [JSON](https://www.json.org/json-en.html) string into an object.
+
+Indentation status is auto-detected and preserved when stringifying back using `stringifyJSON`
 
 ### `parseJSON5(text, options?)`
 
@@ -119,6 +135,12 @@ Converts a [TOML](https://toml.io/) string into an object.
 ### `parseYAML(text, options?)`
 
 Converts a [YAML](https://yaml.org/) string into an object.
+
+### `stringifyJSON(value, options?)`
+
+Converts a JavaScript value to a [JSON](https://www.json.org/json-en.html) string.
+
+Indentation status is auto detected and preserved when using value from parseJSON.
 
 ### `stringifyTOML(value)`
 
