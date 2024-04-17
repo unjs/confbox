@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.1.7
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.6...v0.1.7)
+
+### 🚀 Enhancements
+
+- Json utilities with format and whitespace preservation ([#7](https://github.com/unjs/confbox/pull/7))
+- Preserve style for all utils ([d4665b4](https://github.com/unjs/confbox/commit/d4665b4))
+
+### 🩹 Fixes
+
+- Fix `stringifyTOML` types ([40e1ca4](https://github.com/unjs/confbox/commit/40e1ca4))
+
+### 🏡 Chore
+
+- **release:** V0.1.6 ([2e773d7](https://github.com/unjs/confbox/commit/2e773d7))
+- Apply automated updates ([c8abbd5](https://github.com/unjs/confbox/commit/c8abbd5))
+- Update deps ([b04e6f1](https://github.com/unjs/confbox/commit/b04e6f1))
+- Update docs ([a7aa534](https://github.com/unjs/confbox/commit/a7aa534))
+- Update readme ([64bd92e](https://github.com/unjs/confbox/commit/64bd92e))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.6
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.5...v0.1.6)
