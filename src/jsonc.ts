@@ -1,4 +1,6 @@
+import { storeFormat, type FormatOptions } from "./_format";
 import { parse } from "jsonc-parser";
+import { stringifyJSON } from "./json";
 
 // Source: https://github.com/microsoft/node-jsonc-parser
 
@@ -7,7 +9,8 @@ import { parse } from "jsonc-parser";
  * Converts a [JSONC](https://github.com/microsoft/node-jsonc-parser) string into an object.
  *
  * @NOTE On invalid input, the parser tries to be as fault tolerant as possible, but still return a result.
- * Therefore, always check the errors list to find out if the input was valid.
+ *
+ * @NOTE Comments and trailing commas are not preserved after parsing.
  *
  * @template T The type of the return value.
  * @param text The string to parse as JSONC.
@@ -18,17 +21,37 @@ export function parseJSONC<T = unknown>(
   text: string,
   options?: JSONCParseOptions,
 ): T {
-  return parse(text, options?.errors, options) as T;
+  const obj = parse(text, options?.errors, options);
+  storeFormat(text, obj, options);
+  return obj as T;
+}
+
+/**
+ * Converts a JavaScript value to a [JSONC](https://github.com/microsoft/node-jsonc-parser) string.
+ *
+ * @NOTE Comments and trailing commas are not preserved in the output.
+ *
+ * @param value
+ * @param options
+ * @returns The JSON string converted from the JavaScript value.
+ */
+export function stringifyJSONC(
+  value: any,
+  options?: JSONCStringifyOptions,
+): string {
+  return stringifyJSON(value, options);
 }
 
 // --- Types ---
 
-export interface JSONCParseOptions {
+export interface JSONCParseOptions extends FormatOptions {
   disallowComments?: boolean;
   allowTrailingComma?: boolean;
   allowEmptyContent?: boolean;
   errors?: JSONCParseError[];
 }
+
+export interface JSONCStringifyOptions extends FormatOptions {}
 
 export interface JSONCParseError {
   error: number;

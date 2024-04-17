@@ -1,4 +1,5 @@
 import { load, dump } from "js-yaml";
+import { type FormatOptions, getFormat, storeFormat } from "./_format";
 
 // Source: https://github.com/nodeca/js-yaml
 // Types:  https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/js-yaml/index.d.ts
@@ -7,6 +8,8 @@ import { load, dump } from "js-yaml";
  * Converts a [YAML](https://yaml.org/) string into an object.
  *
  * @NOTE This function does **not** understand multi-document sources, it throws exception on those.
+ *
+ * @NOTE Comments are not preserved after parsing.
  *
  * @NOTE This function does **not** support schema-specific tag resolution restrictions.
  * So, the JSON schema is not as strictly defined in the YAML specification.
@@ -20,13 +23,17 @@ import { load, dump } from "js-yaml";
  */
 export function parseYAML<T = unknown>(
   text: string,
-  options?: parseYAMLOptions,
+  options?: YAMLParseOptions,
 ): T {
-  return load(text, options) as T;
+  const obj = load(text, options);
+  storeFormat(text, obj, options);
+  return obj as T;
 }
 
 /**
  * Converts a JavaScript value to a [YAML](https://yaml.org/) string.
+ *
+ * @NOTE Comments are not preserved in the output.
  *
  * @param value
  * @param options
@@ -34,14 +41,21 @@ export function parseYAML<T = unknown>(
  */
 export function stringifyYAML(
   value: any,
-  options?: stringifyYAMLOptions,
+  options?: YAMLStringifyOptions,
 ): string {
-  return dump(value, options);
+  const format = getFormat(value, { preserveIndentation: false });
+  const indentSize =
+    typeof format.indent === "string" ? format.indent.length : format.indent;
+  const str = dump(value, {
+    indent: indentSize,
+    ...options,
+  });
+  return format.whitespace.start + str.trim() + format.whitespace.end;
 }
 
 // --- Types ---
 
-export interface parseYAMLOptions {
+export interface YAMLParseOptions extends FormatOptions {
   /** string to be used as a file path in error/warning messages. */
   filename?: string | undefined;
   /** function to call on warning messages. */
@@ -54,7 +68,7 @@ export interface parseYAMLOptions {
   listener?(this: any, eventType: any, state: any): void;
 }
 
-export interface stringifyYAMLOptions {
+export interface YAMLStringifyOptions extends FormatOptions {
   /** indentation width to use (in spaces). */
   indent?: number | undefined;
   /** when true, will not add an indentation level to array elements */

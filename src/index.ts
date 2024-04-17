@@ -1,13 +1,13 @@
-export { parseJSON5 } from "./json5";
+export { parseJSON5, stringifyJSON5 } from "./json5";
 export type { JSON5ParseOptions, JSON5StringifyOptions } from "./json5";
 
-export { parseJSONC } from "./jsonc";
+export { parseJSONC, stringifyJSONC } from "./jsonc";
 export type { JSONCParseError, JSONCParseOptions } from "./jsonc";
 
 export { parseYAML, stringifyYAML } from "./yaml";
-export type { parseYAMLOptions, stringifyYAMLOptions } from "./yaml";
-
-export { parseTOML, stringifyTOML } from "./toml";
+export type { YAMLParseOptions, YAMLStringifyOptions } from "./yaml";
 
 export { parseJSON, stringifyJSON } from "./json";
 export type { JSONParseOptions, JSONStringifyOptions } from "./json";
+
+export { parseTOML, stringifyTOML } from "./toml";

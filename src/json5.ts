@@ -1,4 +1,6 @@
+import { getFormat, storeFormat, type FormatOptions } from "./_format";
 import parse from "json5/lib/parse.js";
+import stringify from "json5/lib/stringify";
 
 // Source: https://github.com/json5/json5
 
@@ -14,12 +16,30 @@ export function parseJSON5<T = unknown>(
   text: string,
   options?: JSON5ParseOptions,
 ): T {
-  return parse(text, options?.reviver) as T;
+  const obj = parse(text, options?.reviver);
+  storeFormat(text, obj, options);
+  return obj as T;
+}
+
+/**
+ * Converts a JavaScript value to a [JSON5](https://json5.org/) string.
+ *
+ * @param value
+ * @param options
+ * @returns The JSON string converted from the JavaScript value.
+ */
+export function stringifyJSON5(
+  value: any,
+  options?: JSON5StringifyOptions,
+): string {
+  const format = getFormat(value, options);
+  const str = stringify(value, options?.replacer, format.indent);
+  return format.whitespace.start + str + format.whitespace.end;
 }
 
 // --- Types ---
 
-export interface JSON5ParseOptions {
+export interface JSON5ParseOptions extends FormatOptions {
   /**
    * A function that alters the behavior of the parsing process, or an array of
    * String and Number objects that serve as a allowlist for selecting/filtering
@@ -30,7 +50,7 @@ export interface JSON5ParseOptions {
   reviver?: (this: any, key: string, value: any) => any;
 }
 
-export interface JSON5StringifyOptions {
+export interface JSON5StringifyOptions extends FormatOptions {
   /**
    * A function that alters the behavior of the stringification process, or an
    * array of String and Number objects that serve as a allowlist for
@@ -38,10 +58,7 @@ export interface JSON5StringifyOptions {
    * the JSON5 string. If this value is null or not provided, all properties
    * of the object are included in the resulting JSON5 string.
    */
-  replacer?:
-    | ((this: any, key: string, value: any) => any)
-    | (string | number)[]
-    | null;
+  replacer?: ((this: any, key: string, value: any) => any) | null;
 
   /**
    * A String or Number object that's used to insert white space into the

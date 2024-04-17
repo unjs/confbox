@@ -20,41 +20,59 @@ const expectedObjWithDate = {
 
 describe("confbox", () => {
   describe("json5", () => {
-    it("parse fixture", () => {
+    it("parse", () => {
       expect(confbox.parseJSON5(fixtures.json5)).toMatchObject(expectedObj);
+    });
+
+    it("stringify", () => {
+      expect(confbox.stringifyJSON5(confbox.parseJSON5(fixtures.json5))).toBe(
+        fixtures.json5.replace(/\s*\/\/.*/g, ""),
+      );
     });
   });
 
   describe("jsonc", () => {
-    it("parse fixture", () => {
+    it("parse", () => {
       expect(confbox.parseJSONC(fixtures.jsonc)).toMatchObject(expectedObj);
+    });
+
+    it("stringify", () => {
+      expect(confbox.stringifyJSONC(confbox.parseJSONC(fixtures.jsonc))).toBe(
+        fixtures.jsonc.replace(/\s*\/\/.*/g, ""),
+      );
     });
   });
 
   describe("toml", () => {
-    it("parse fixture", () => {
+    it("parse", () => {
       expect(confbox.parseTOML(fixtures.toml)).toMatchObject(
         expectedObjWithDate,
+      );
+    });
+
+    it("stringify", () => {
+      expect(confbox.stringifyTOML(confbox.parseTOML(fixtures.toml))).toBe(
+        fixtures.toml.replace(/\s*#.*/g, ""),
       );
     });
   });
 
   describe("yaml", () => {
-    it("parse fixture", () => {
+    it("parse", () => {
       expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(
         expectedObjWithDate,
       );
     });
 
     it("stringify", () => {
-      expect(
-        confbox.parseYAML(confbox.stringifyYAML(expectedObjWithDate)),
-      ).toMatchObject(expectedObjWithDate);
+      expect(confbox.stringifyYAML(confbox.parseYAML(fixtures.yaml))).toBe(
+        fixtures.yaml.replace(/\s*#.*/g, ""),
+      );
     });
   });
 
   describe("json", () => {
-    it("parse fixture", () => {
+    it("parse", () => {
       expect(confbox.parseJSON(fixtures.json)).toMatchObject(expectedObj);
     });
 
