@@ -1,6 +1,10 @@
 import unjs from 'eslint-config-unjs';
 
 export default unjs(
-  { ignores: [] },
+  {
+    ignores: [
+      "test/fixture/jsonc/package.json"
+    ]
+  },
   { rules: {} }
 );
