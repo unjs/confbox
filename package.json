@@ -62,11 +62,11 @@
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.12.7",
-    "@vitest/coverage-v8": "^1.4.0",
+    "@vitest/coverage-v8": "^1.5.0",
     "automd": "^0.3.7",
     "changelogen": "^0.5.5",
     "eslint": "^9.0.0",
-    "eslint-config-unjs": "^0.3.0-rc.6",
+    "eslint-config-unjs": "0.3.0-rc.6",
     "jiti": "^1.21.0",
     "js-toml": "^1.0.0",
     "js-yaml": "^4.1.0",
@@ -78,8 +78,8 @@
     "toml": "^3.0.0",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
-    "vitest": "^1.4.0",
+    "vitest": "^1.5.0",
     "yaml": "^2.4.1"
   },
-  "packageManager": "pnpm@8.15.3"
+  "packageManager": "pnpm@9.0.1"
 }
