@@ -8,3 +8,6 @@ export { parseYAML, stringifyYAML } from "./yaml";
 export type { parseYAMLOptions, stringifyYAMLOptions } from "./yaml";
 
 export { parseTOML, stringifyTOML } from "./toml";
+
+export { parseJSON, stringifyJSON } from "./json";
+export type { JSONParseOptions, JSONStringifyOptions } from "./json";

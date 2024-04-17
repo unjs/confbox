@@ -33,3 +33,15 @@ export const jsonc = /* jsonc */ `
   }
 }
 `.trim();
+
+export const json = /* json */ `
+
+{
+  "title": "Example",
+  "owner": {
+    "name": "Preston-Werner",
+    "dob": "1979-05-27T07:32:00-08:00"
+  }
+}
+
+`;
