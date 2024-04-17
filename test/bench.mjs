@@ -39,7 +39,7 @@ defineBench("yaml", {
 });
 
 defineBench("toml", {
-  'confbox.parseTOML': () => {
+  "confbox.parseTOML": () => {
     confbox.parseTOML(fixtures.toml);
   },
   "BinaryMuse/toml-node": () => {
@@ -54,7 +54,7 @@ defineBench("toml", {
 });
 
 defineBench("json5", {
-  'confbox.parseJSON5': () => {
+  "confbox.parseJSON5": () => {
     confbox.parseJSON5(fixtures.json5);
   },
   "json5/json5": () => {
@@ -63,7 +63,7 @@ defineBench("json5", {
 });
 
 defineBench("jsonc", {
-  'confbox.parseJSONC': () => {
+  "confbox.parseJSONC": () => {
     confbox.parseJSONC(fixtures.jsonc);
   },
   "microsoft/node-jsonc-parser": () => {
@@ -72,7 +72,7 @@ defineBench("jsonc", {
 });
 
 defineBench("json", {
-  'JSON.parse': () => {
+  "JSON.parse": () => {
     JSON.parse(fixtures.json);
   },
   "confbox.parseJSON": () => {

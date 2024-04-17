@@ -44,4 +44,4 @@ export const json = /* json */ `
   }
 }
 
-`
+`;
