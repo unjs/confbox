@@ -17,7 +17,7 @@ Config parsers for:
 
 ✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
 
-✅ [JSON](https://www.json.org/json-en.html) (with format and whitespace preservation)
+✅ [JSON](https://www.json.org/json-en.html) 
 
 With perfect bundling:
 
@@ -31,7 +31,7 @@ With perfect bundling:
 
 ✨ Handpicked best libraries (bundle+perf)
 
-✨ Auto-preserves the indentation and whitespace.
+✨ Auto detects indentation and whitespace when parsing and preservers when serializing 
 
 > [!NOTE]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
