@@ -70,13 +70,15 @@ Import:
 ```js
 import {
   parseJSON5,
+  stringifyJSON5,
   parseJSONC,
+  stringifyJSONC,
   parseYAML,
   stringifyYAML,
-  parseTOML,
-  stringifyTOML,
   parseJSON,
   stringifyJSON,
+  parseTOML,
+  stringifyTOML,
 } from "confbox";
 ```
 
@@ -85,13 +87,15 @@ import {
 ```js
 const {
   parseJSON5,
+  stringifyJSON5,
   parseJSONC,
+  stringifyJSONC,
   parseYAML,
   stringifyYAML,
-  parseTOML,
-  stringifyTOML,
   parseJSON,
   stringifyJSON,
+  parseTOML,
+  stringifyTOML,
 } = require("confbox");
 ```
 
@@ -100,13 +104,15 @@ const {
 ```js
 import {
   parseJSON5,
+  stringifyJSON5,
   parseJSONC,
+  stringifyJSONC,
   parseYAML,
   stringifyYAML,
-  parseTOML,
-  stringifyTOML,
   parseJSON,
   stringifyJSON,
+  parseTOML,
+  stringifyTOML,
 } from "https://esm.sh/confbox";
 ```
 
@@ -141,6 +147,14 @@ Converts a [YAML](https://yaml.org/) string into an object.
 Converts a JavaScript value to a [JSON](https://www.json.org/json-en.html) string.
 
 Indentation status is auto detected and preserved when using value from parseJSON.
+
+### `stringifyJSON5(value, options?)`
+
+Converts a JavaScript value to a [JSON5](https://json5.org/) string.
+
+### `stringifyJSONC(value, options?)`
+
+Converts a JavaScript value to a [JSONC](https://github.com/microsoft/node-jsonc-parser) string.
 
 ### `stringifyTOML(value)`
 
