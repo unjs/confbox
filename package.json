@@ -61,12 +61,12 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.12.12",
     "@vitest/coverage-v8": "^1.6.0",
     "automd": "^0.3.7",
     "changelogen": "^0.5.5",
     "detect-indent": "^7.0.1",
-    "eslint": "^9.2.0",
+    "eslint": "^9.3.0",
     "eslint-config-unjs": "0.3.1",
     "jiti": "^1.21.0",
     "js-toml": "^1.0.0",
@@ -75,12 +75,12 @@
     "jsonc-parser": "^3.2.1",
     "mitata": "^0.1.11",
     "prettier": "^3.2.5",
-    "smol-toml": "^1.1.4",
+    "smol-toml": "^1.2.0",
     "toml": "^3.0.0",
     "typescript": "^5.4.5",
     "unbuild": "^2.0.0",
     "vitest": "^1.6.0",
     "yaml": "^2.4.2"
   },
-  "packageManager": "pnpm@9.1.1"
+  "packageManager": "pnpm@9.1.3"
 }
