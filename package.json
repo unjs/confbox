@@ -73,7 +73,7 @@
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
     "jsonc-parser": "^3.3.1",
-    "mitata": "^0.1.14",
+    "mitata": "^1.0.10",
     "prettier": "^3.3.3",
     "smol-toml": "^1.3.0",
     "toml": "^3.0.0",
