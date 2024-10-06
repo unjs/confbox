@@ -14,7 +14,7 @@ Parsing and serialization utils for [YAML](https://yaml.org/) ([js-yaml](https:/
 
 ✨ Types exported out of the box
 
-✨ Presrves code style (indentation and whitespace)
+✨ Preserves code style (indentation and whitespace)
 
 > [!TIP]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
