@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.8
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.7...v0.1.8)
+
+### 🏡 Chore
+
+- Update bench script ([167d520](https://github.com/unjs/confbox/commit/167d520))
+- Update dependencies ([ff9a508](https://github.com/unjs/confbox/commit/ff9a508))
+- Update readme ([04f5285](https://github.com/unjs/confbox/commit/04f5285))
+- Update readme ([98b23c4](https://github.com/unjs/confbox/commit/98b23c4))
+- Fix lint ([c0c3b03](https://github.com/unjs/confbox/commit/c0c3b03))
+- Lint ([b2cee59](https://github.com/unjs/confbox/commit/b2cee59))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.1.7
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.6...v0.1.7)
