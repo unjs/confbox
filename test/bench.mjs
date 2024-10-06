@@ -13,11 +13,11 @@ import * as fixtures from "./fixtures.mjs";
 
 function defineBench(_, benchmarks) {
   // group(() => {
-    summary(() => {
-      for (const [name, fn] of Object.entries(benchmarks)) {
-        bench(`${name}`, fn);
-      }
-    });
+  summary(() => {
+    for (const [name, fn] of Object.entries(benchmarks)) {
+      bench(`${name}`, fn);
+    }
+  });
   // })
 }
 
