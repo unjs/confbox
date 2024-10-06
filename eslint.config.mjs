@@ -1,10 +1,12 @@
-import unjs from 'eslint-config-unjs';
+import unjs from "eslint-config-unjs";
 
 export default unjs(
   {
-    ignores: [
-      "test/fixture/jsonc/package.json"
-    ]
+    ignores: ["test/fixture/jsonc/package.json"],
   },
-  { rules: {} }
+  {
+    rules: {
+      "@typescript-eslint/no-empty-object-type": 0,
+    },
+  },
 );

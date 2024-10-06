@@ -1,4 +1,4 @@
-import { bench, run, group, summary } from "mitata";
+import { bench, run, summary } from "mitata";
 
 import nodeToml from "toml";
 import * as jsToml from "js-toml";
