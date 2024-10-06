@@ -1,4 +1,4 @@
-import { bench, baseline, run, group } from "mitata";
+import { bench, run, group, summary } from "mitata";
 
 import nodeToml from "toml";
 import * as jsToml from "js-toml";
@@ -11,19 +11,14 @@ import * as jsoncParser from "jsonc-parser";
 import * as confbox from "../dist/index.mjs";
 import * as fixtures from "./fixtures.mjs";
 
-function defineBench(groupName, benchs) {
-  group(groupName, () => {
-    const _benchs = Object.entries(benchs);
-    for (const [name, fn] of _benchs) {
-      // Warmup
-      for (let i = 0; i < 1000; i++) {
-        fn();
+function defineBench(_, benchmarks) {
+  // group(() => {
+    summary(() => {
+      for (const [name, fn] of Object.entries(benchmarks)) {
+        bench(`${name}`, fn);
       }
-
-      const runner = name === _benchs[0][0] ? baseline : bench;
-      runner(name, fn);
-    }
-  });
+    });
+  // })
 }
 
 defineBench("yaml", {
