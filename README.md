@@ -8,21 +8,13 @@
 
 <!-- /automd -->
 
-Config parsers for:
+Parsing and serialization utils for [YAML](https://yaml.org/) ([js-yaml](https://github.com/nodeca/js-yaml)), [TOML](https://toml.io/) ([smol-toml](https://github.com/squirrelchat/smol-toml)), [JSONC](https://github.com/microsoft/node-jsonc-parser) ([jsonc-parser](https://github.com/microsoft/node-jsonc-parser)), [JSON5](https://json5.org/) ([json5](https://github.com/json5/json5)), and [JSON](https://www.json.org/json-en.html).
 
-- ✅ [YAML](https://yaml.org/) (with [`js-yaml`](https://github.com/nodeca/js-yaml))
-- ✅ [TOML](https://toml.io/) (with [`smol-toml`](https://github.com/squirrelchat/smol-toml))
-- ✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [`jsonc-parser`](https://github.com/microsoft/node-jsonc-parser))
-- ✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
-- ✅ [JSON](https://www.json.org/json-en.html)
+✨ Zero dependency and tree-shakable
 
-With perfect bundling:
+✨ Types exported out of the box
 
-- ✨ Types exported out of the box
-- ✨ Zero dependency and compact dist
-- ✨ Dual ESM/CJS build
-- ✨ Consistent and tested API
-- ✨ Presrves code style (indentation and whitespace)
+✨ Presrves code style (indentation and whitespace)
 
 > [!TIP]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
