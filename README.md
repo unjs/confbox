@@ -1,39 +1,30 @@
 # confbox
 
-<!-- automd:badges color=yellow no-npmDownloads bundlephobia packagephobia -->
+<!-- automd:badges color=yellow bundlephobia packagephobia -->
 
 [![npm version](https://img.shields.io/npm/v/confbox?color=yellow)](https://npmjs.com/package/confbox)
+[![npm downloads](https://img.shields.io/npm/dm/confbox?color=yellow)](https://npm.chart.dev/confbox)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/confbox?color=yellow)](https://bundlephobia.com/package/confbox)
 
 <!-- /automd -->
 
 Config parsers for:
 
-✅ [YAML](https://yaml.org/) (with [`js-yaml`](https://github.com/nodeca/js-yaml))
-
-✅ [TOML](https://toml.io/) (with [`smol-toml`](https://github.com/squirrelchat/smol-toml))
-
-✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [`jsonc-parser`](https://github.com/microsoft/node-jsonc-parser))
-
-✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
-
-✅ [JSON](https://www.json.org/json-en.html) 
+- ✅ [YAML](https://yaml.org/) (with [`js-yaml`](https://github.com/nodeca/js-yaml))
+- ✅ [TOML](https://toml.io/) (with [`smol-toml`](https://github.com/squirrelchat/smol-toml))
+- ✅ [JSONC](https://github.com/microsoft/node-jsonc-parser) (with [`jsonc-parser`](https://github.com/microsoft/node-jsonc-parser))
+- ✅ [JSON5](https://json5.org/) (with [`json5`](https://github.com/json5/json5))
+- ✅ [JSON](https://www.json.org/json-en.html)
 
 With perfect bundling:
 
-✨ Types exported out of the box
+- ✨ Types exported out of the box
+- ✨ Zero dependency and compact dist
+- ✨ Dual ESM/CJS build
+- ✨ Consistent and tested API
+- ✨ Presrves code style (indentation and whitespace)
 
-✨ Zero config and compact redistribution
-
-✨ Dual ESM/CJS build
-
-✨ Consistent and tested API
-
-✨ Handpicked best libraries (bundle+perf)
-
-✨ Auto detects indentation and whitespace when parsing and preservers when serializing 
-
-> [!NOTE]
+> [!TIP]
 > Use [unjs/c12](https://github.com/unjs/c12) for a full featured configuration loader!
 
 ## Usage
@@ -57,6 +48,9 @@ pnpm install confbox
 
 # bun
 bun install confbox
+
+# deno
+deno install confbox
 ```
 
 <!-- /automd -->
@@ -65,7 +59,7 @@ Import:
 
 <!-- automd:jsimport cjs cdn src="./src/index.ts" -->
 
-**ESM** (Node.js, Bun)
+**ESM** (Node.js, Bun, Deno)
 
 ```js
 import {
