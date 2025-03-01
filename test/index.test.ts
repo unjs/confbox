@@ -2,26 +2,10 @@ import { expect, it, describe } from "vitest";
 import * as confbox from "../src";
 import * as fixtures from "./fixtures.mjs";
 
-const expectedObj = {
-  owner: {
-    dob: "1979-05-27T07:32:00-08:00",
-    name: "Preston-Werner",
-  },
-  title: "Example",
-};
-
-const expectedObjWithDate = {
-  owner: {
-    dob: new Date("1979-05-27T07:32:00-08:00"),
-    name: "Preston-Werner",
-  },
-  title: "Example",
-};
-
 describe("confbox", () => {
   describe("json5", () => {
     it("parse", () => {
-      expect(confbox.parseJSON5(fixtures.json5)).toMatchObject(expectedObj);
+      expect(confbox.parseJSON5(fixtures.json5)).toMatchObject(fixtures.obj);
     });
 
     it("stringify", () => {
@@ -33,7 +17,7 @@ describe("confbox", () => {
 
   describe("jsonc", () => {
     it("parse", () => {
-      expect(confbox.parseJSONC(fixtures.jsonc)).toMatchObject(expectedObj);
+      expect(confbox.parseJSONC(fixtures.jsonc)).toMatchObject(fixtures.obj);
     });
 
     it("stringify", () => {
@@ -45,9 +29,12 @@ describe("confbox", () => {
 
   describe("toml", () => {
     it("parse", () => {
-      expect(confbox.parseTOML(fixtures.toml)).toMatchObject(
-        expectedObjWithDate,
-      );
+      expect(confbox.parseTOML(fixtures.toml)).toMatchObject({
+        types: {
+          ...fixtures.objWithDate.types,
+          null: "null", // TOML doesn't support null
+        },
+      });
     });
 
     it("stringify", () => {
@@ -60,7 +47,7 @@ describe("confbox", () => {
   describe("yaml", () => {
     it("parse", () => {
       expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(
-        expectedObjWithDate,
+        fixtures.objWithDate,
       );
     });
 
@@ -73,7 +60,7 @@ describe("confbox", () => {
 
   describe("json", () => {
     it("parse", () => {
-      expect(confbox.parseJSON(fixtures.json)).toMatchObject(expectedObj);
+      expect(confbox.parseJSON(fixtures.json)).toMatchObject(fixtures.obj);
     });
 
     it("stringify", () => {

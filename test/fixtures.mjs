@@ -1,44 +1,113 @@
+export const obj = {
+  types: {
+    boolean: true,
+    integer: 1,
+    float: 3.14,
+    string: "hello",
+    array: [1, 2, 3],
+    object: { key: "value" },
+    null: null, // eslint-disable-line unicorn/no-null
+    date: "1979-05-27T07:32:00-08:00",
+  },
+};
+
+export const objWithDate = {
+  types: {
+    ...obj.types,
+    date: new Date(obj.types.date),
+  },
+};
+
+
 export const yaml = /* yaml */ `
-title: Example
-owner:
-  name: Preston-Werner
-  dob: 1979-05-27T15:32:00.000Z # dates
+types:
+  boolean: true
+  integer: 1
+  float: 3.14
+  string: hello
+  array:
+    - 1
+    - 2
+    - 3
+  object:
+    key: value
+  'null': null
+  date: 1979-05-27T15:32:00.000Z
 `;
 
 export const toml = /* toml */ `
-title = "Example"
+[types]
+boolean = true
+integer = 1
+float = 3.14
+string = "hello"
+array = [ 1, 2, 3 ]
+null = "null"
+date = 1979-05-27T15:32:00.000Z
 
-[owner]
-name = "Preston-Werner"
-dob = 1979-05-27T07:32:00.000-08:00 # dates
+[types.object]
+key = "value"
   `;
 
-export const json5 = /* json5 */ `
+export const json5 = /* js */ `
 {
-  title: 'Example',
-  owner: {
-    name: 'Preston-Werner',
-    dob: '1979-05-27T07:32:00-08:00', // dates
+  types: {
+    boolean: true,
+    integer: 1,
+    float: 3.14,
+    string: 'hello',
+    array: [
+      1,
+      2,
+      3,
+    ],
+    object: {
+      key: 'value',
+    },
+    null: null,
+    date: '1979-05-27T07:32:00-08:00',
   },
 }
 `;
 
 export const jsonc = /* jsonc */ `
 {
-  "title": "Example",
-  "owner": {
-    "name": "Preston-Werner",
-    "dob": "1979-05-27T07:32:00-08:00" // dates
+  "types": {
+    "boolean": true,
+    "integer": 1,
+    "float": 3.14,
+    "string": "hello",
+    "array": [
+      1,
+      2,
+      3
+    ],
+    "object": {
+      "key": "value"
+    },
+    "null": null,
+    "date": "1979-05-27T07:32:00-08:00"
   }
 }`;
 
 export const json = /* json */ `
 
 {
-  "title": "Example",
-  "owner": {
-    "name": "Preston-Werner",
-    "dob": "1979-05-27T07:32:00-08:00"
+  "types": {
+    "boolean": true,
+    "integer": 1,
+    "float": 3.14,
+    "string": "hello",
+    "array": [
+      1,
+      2,
+      3
+    ],
+    "object": {
+      "key": "value"
+    },
+    "null": null,
+    "date": "1979-05-27T07:32:00-08:00"
   }
 }
 
