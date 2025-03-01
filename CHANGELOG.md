@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.1.8...v0.2.0)
+
+### 🚀 Enhancements
+
+- Ini support ([#50](https://github.com/unjs/confbox/pull/50))
+
+### 📦 Build
+
+- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+
+### 🏡 Chore
+
+- Fix for typo in readme ([#32](https://github.com/unjs/confbox/pull/32))
+- Update deps ([e48890b](https://github.com/unjs/confbox/commit/e48890b))
+- Update ci ([6fc48dd](https://github.com/unjs/confbox/commit/6fc48dd))
+- Apply automated updates ([256039f](https://github.com/unjs/confbox/commit/256039f))
+- Apply automated updates ([69f55d3](https://github.com/unjs/confbox/commit/69f55d3))
+
+### ✅ Tests
+
+- Add more fixtures ([7eb3e91](https://github.com/unjs/confbox/commit/7eb3e91))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Fahad Heylaal ([@fahad19](https://github.com/fahad19))
+
 ## v0.1.8
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.7...v0.1.8)

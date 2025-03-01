@@ -1,6 +1,6 @@
 {
   "name": "confbox",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Compact and high quality YAML, TOML, JSONC and JSON5 parsers",
   "keywords": [
     "yaml",
