@@ -111,3 +111,17 @@ export const json = /* json */ `
 }
 
 `;
+
+export const ini = /* ini */ `
+[types]
+boolean = true
+integer = 1
+float = 3.14
+string = hello
+array[] = 1
+array[] = 2
+array[] = 3
+object.key = value
+null = null
+date = 1979-05-27T15:32:00.000Z
+`.trimStart();

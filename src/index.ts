@@ -11,3 +11,6 @@ export { parseJSON, stringifyJSON } from "./json";
 export type { JSONParseOptions, JSONStringifyOptions } from "./json";
 
 export { parseTOML, stringifyTOML } from "./toml";
+
+export { parseINI, stringifyINI } from "./ini";
+export type { INIParseOptions, INIStringifyOptions } from "./ini";
