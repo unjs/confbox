@@ -18,7 +18,6 @@ export const objWithDate = {
   },
 };
 
-
 export const yaml = /* yaml */ `
 types:
   boolean: true
