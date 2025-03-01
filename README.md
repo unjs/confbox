@@ -9,7 +9,7 @@
 
 <!-- /automd -->
 
-Parsing and serialization utils for [YAML](https://yaml.org/) ([js-yaml](https://github.com/nodeca/js-yaml)), [TOML](https://toml.io/) ([smol-toml](https://github.com/squirrelchat/smol-toml)), [JSONC](https://github.com/microsoft/node-jsonc-parser) ([jsonc-parser](https://github.com/microsoft/node-jsonc-parser)), [JSON5](https://json5.org/) ([json5](https://github.com/json5/json5)), and [JSON](https://www.json.org/json-en.html).
+Parsing and serialization utils for [YAML](https://yaml.org/) ([js-yaml](https://github.com/nodeca/js-yaml)), [TOML](https://toml.io/) ([smol-toml](https://github.com/squirrelchat/smol-toml)), [JSONC](https://github.com/microsoft/node-jsonc-parser) ([jsonc-parser](https://github.com/microsoft/node-jsonc-parser)), [JSON5](https://json5.org/) ([json5](https://github.com/json5/json5)), [INI](https://en.wikipedia.org/wiki/INI_file) ([ini](https://www.npmjs.com/package/ini)) and [JSON](https://www.json.org/json-en.html).
 
 ✨ Zero dependency and tree-shakable
 
@@ -66,6 +66,8 @@ import {
   stringifyJSON,
   parseTOML,
   stringifyTOML,
+  parseINI,
+  stringifyINI,
 } from "confbox";
 ```
 
@@ -83,6 +85,8 @@ const {
   stringifyJSON,
   parseTOML,
   stringifyTOML,
+  parseINI,
+  stringifyINI,
 } = require("confbox");
 ```
 
@@ -100,12 +104,20 @@ import {
   stringifyJSON,
   parseTOML,
   stringifyTOML,
+  parseINI,
+  stringifyINI,
 } from "https://esm.sh/confbox";
 ```
 
 <!-- /automd -->
 
 <!-- automd:jsdocs src="./src/index" -->
+
+### `parseINI(text, options?)`
+
+Converts an [INI](https://www.ini.org/ini-en.html) string into an object.
+
+**Note:** Style and indentation are not preserved currently.
 
 ### `parseJSON(text, options?)`
 
@@ -128,6 +140,12 @@ Converts a [TOML](https://toml.io/) string into an object.
 ### `parseYAML(text, options?)`
 
 Converts a [YAML](https://yaml.org/) string into an object.
+
+### `stringifyINI(value, options?)`
+
+Converts a JavaScript value to an [INI](https://www.ini.org/ini-en.html) string.
+
+**Note:** Style and indentation are not preserved currently.
 
 ### `stringifyJSON(value, options?)`
 

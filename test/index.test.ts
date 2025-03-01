@@ -69,4 +69,16 @@ describe("confbox", () => {
       );
     });
   });
+
+  describe("ini", () => {
+    it.skip("parse", () => {
+      expect(confbox.parseINI(fixtures.ini)).toMatchObject(fixtures.obj);
+    });
+
+    it("stringify", () => {
+      expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(
+        fixtures.ini,
+      );
+    });
+  });
 });
