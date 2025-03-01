@@ -1,14 +1,15 @@
 {
   "name": "confbox",
   "version": "0.2.0",
-  "description": "Compact and high quality YAML, TOML, JSONC and JSON5 parsers",
+  "description": "Compact YAML, TOML, JSONC, JSON5 and INI parser and serializer",
   "keywords": [
     "yaml",
     "toml",
     "jsonc",
     "json5",
     "unjs",
-    "config"
+    "config",
+    "ini"
   ],
   "repository": "unjs/confbox",
   "license": "MIT",
