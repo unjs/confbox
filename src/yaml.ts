@@ -1,8 +1,8 @@
-import { load, dump } from "js-yaml";
+import { parse, stringify } from "yaml";
 import { type FormatOptions, getFormat, storeFormat } from "./_format";
 
-// Source: https://github.com/nodeca/js-yaml
-// Types:  https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/js-yaml/index.d.ts
+// https://eemeli.org/yaml/#yaml
+// https://github.com/eemeli/yaml
 
 /**
  * Converts a [YAML](https://yaml.org/) string into an object.
@@ -25,7 +25,10 @@ export function parseYAML<T = unknown>(
   text: string,
   options?: YAMLParseOptions,
 ): T {
-  const obj = load(text, options);
+  const obj = parse(text, {
+    customTags: ["timestamp"],
+    ...options,
+  });
   storeFormat(text, obj, options);
   return obj as T;
 }
@@ -46,7 +49,7 @@ export function stringifyYAML(
   const format = getFormat(value, { preserveIndentation: false });
   const indentSize =
     typeof format.indent === "string" ? format.indent.length : format.indent;
-  const str = dump(value, {
+  const str = stringify(value, {
     indent: indentSize,
     ...options,
   });
