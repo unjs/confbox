@@ -5,6 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/confbox?color=yellow)](https://npmjs.com/package/confbox)
 [![npm downloads](https://img.shields.io/npm/dm/confbox?color=yellow)](https://npm.chart.dev/confbox)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/confbox?color=yellow)](https://bundlephobia.com/package/confbox)
+[![install size](https://badgen.net/packagephobia/install/confbox?color=yellow)](https://packagephobia.com/result?p=confbox)
 
 <!-- /automd -->
 
