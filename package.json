@@ -16,37 +16,29 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
     },
     "./json5": {
-      "types": "./dist/json5.d.ts",
-      "import": "./dist/json5.mjs",
-      "require": "./dist/json5.cjs"
+      "types": "./dist/json5.d.mts",
+      "import": "./dist/json5.mjs"
     },
     "./jsonc": {
-      "types": "./dist/jsonc.d.ts",
-      "import": "./dist/jsonc.mjs",
-      "require": "./dist/jsonc.cjs"
+      "types": "./dist/jsonc.d.mts",
+      "import": "./dist/jsonc.mjs"
     },
     "./toml": {
-      "types": "./dist/toml.d.ts",
-      "import": "./dist/toml.mjs",
-      "require": "./dist/toml.cjs"
+      "types": "./dist/toml.d.mts",
+      "import": "./dist/toml.mjs"
     },
     "./yaml": {
-      "types": "./dist/yaml.d.ts",
-      "import": "./dist/yaml.mjs",
-      "require": "./dist/yaml.cjs"
+      "types": "./dist/yaml.d.mts",
+      "import": "./dist/yaml.mjs"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "files": [
-    "dist",
-    "*.d.ts"
+    "dist"
   ],
   "scripts": {
     "build": "unbuild",
