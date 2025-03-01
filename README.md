@@ -50,7 +50,7 @@ deno install confbox
 
 Import:
 
-<!-- automd:jsimport cjs cdn src="./src/index.ts" -->
+<!-- automd:jsimport cdn src="./src/index.ts" -->
 
 **ESM** (Node.js, Bun, Deno)
 
@@ -69,25 +69,6 @@ import {
   parseINI,
   stringifyINI,
 } from "confbox";
-```
-
-**CommonJS** (Legacy Node.js)
-
-```js
-const {
-  parseJSON5,
-  stringifyJSON5,
-  parseJSONC,
-  stringifyJSONC,
-  parseYAML,
-  stringifyYAML,
-  parseJSON,
-  stringifyJSON,
-  parseTOML,
-  stringifyTOML,
-  parseINI,
-  stringifyINI,
-} = require("confbox");
 ```
 
 **CDN** (Deno, Bun and Browsers)
