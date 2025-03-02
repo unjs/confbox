@@ -18,27 +18,27 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
+      "default": "./dist/index.mjs"
     },
     "./json5": {
       "types": "./dist/json5.d.mts",
-      "import": "./dist/json5.mjs"
+      "default": "./dist/json5.mjs"
     },
     "./jsonc": {
       "types": "./dist/jsonc.d.mts",
-      "import": "./dist/jsonc.mjs"
+      "default": "./dist/jsonc.mjs"
     },
     "./toml": {
       "types": "./dist/toml.d.mts",
-      "import": "./dist/toml.mjs"
+      "default": "./dist/toml.mjs"
     },
     "./yaml": {
       "types": "./dist/yaml.d.mts",
-      "import": "./dist/yaml.mjs"
+      "default": "./dist/yaml.mjs"
     },
     "./ini": {
       "types": "./dist/ini.d.mts",
-      "import": "./dist/ini.mjs"
+      "default": "./dist/ini.mjs"
     }
   },
   "types": "./dist/index.d.mts",
