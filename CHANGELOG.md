@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.0...v0.2.1)
+
+### 📦 Build
+
+- Use `default` condition to allow `require(esm)` ([0083def](https://github.com/unjs/confbox/commit/0083def))
+
+### 🏡 Chore
+
+- Update readme ([ca7669e](https://github.com/unjs/confbox/commit/ca7669e))
+- Update pkg description ([944f201](https://github.com/unjs/confbox/commit/944f201))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.2.0
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.1.8...v0.2.0)
