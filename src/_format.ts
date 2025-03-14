@@ -31,7 +31,7 @@ export interface FormatOptions {
   sampleSize?: number;
 }
 
-const ftmSymbol = Symbol.for("__confbox_fmt__");
+const formats = new WeakMap<any, FormatInfo>();
 
 const WhitespaceStartRe = /^(\s+)/;
 const WhitespaceEndRe = /(\s+)$/;
@@ -69,12 +69,7 @@ export function storeFormat(
     return;
   }
 
-  Object.defineProperty(obj, ftmSymbol, {
-    enumerable: false,
-    configurable: true,
-    writable: true,
-    value: detectFormat(text, opts),
-  });
+  formats.set(obj, detectFormat(text, opts));
 }
 
 export function getFormat(
@@ -84,10 +79,11 @@ export function getFormat(
   indent: string | number | undefined;
   whitespace: { start: string; end: string };
 } {
-  if (!obj || typeof obj !== "object" || !(ftmSymbol in obj)) {
+  const format = formats.get(obj);
+  if (!obj || typeof obj !== "object" || !format) {
     return { indent: opts?.indent, whitespace: { start: "", end: "" } };
   }
-  const format = obj[ftmSymbol] as FormatInfo;
+
   const indent = opts?.indent || detectIndent(format.sample || "").indent;
   return {
     indent,
