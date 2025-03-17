@@ -68,6 +68,12 @@ describe("confbox", () => {
         fixtures.json,
       );
     });
+
+    it("stringify from raw object", () => {
+      expect(confbox.stringifyJSON(JSON.parse(fixtures.json))).toBe(
+        fixtures.json.trim(),
+      );
+    });
   });
 
   describe("ini", () => {
