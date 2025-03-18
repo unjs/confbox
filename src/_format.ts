@@ -85,7 +85,7 @@ export function getFormat(
   whitespace: { start: string; end: string };
 } {
   if (!obj || typeof obj !== "object" || !(ftmSymbol in obj)) {
-    return { indent: opts?.indent, whitespace: { start: "", end: "" } };
+    return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" } };
   }
   const format = obj[ftmSymbol] as FormatInfo;
   const indent = opts?.indent || detectIndent(format.sample || "").indent;
