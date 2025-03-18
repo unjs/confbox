@@ -7,6 +7,7 @@ import jsYaml from "js-yaml";
 import yaml from "yaml";
 import * as json5 from "json5";
 import * as jsoncParser from "jsonc-parser";
+import stripeJSONComments from "strip-json-comments";
 
 import * as confbox from "../dist/index.mjs";
 import * as fixtures from "./fixtures.mjs";
@@ -63,6 +64,9 @@ defineBench("jsonc", {
   },
   "microsoft/node-jsonc-parser": () => {
     jsoncParser.parse(fixtures.jsonc);
+  },
+  "strip-json-comments/parseJSONC": () => {
+    JSON.parse(stripeJSONComments(fixtures.jsonc));
   },
 });
 
