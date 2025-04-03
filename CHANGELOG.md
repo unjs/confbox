@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- **json:** Default indentation to `2` ([#56](https://github.com/unjs/confbox/pull/56))
+
+### 📦 Build
+
+- Use `default` condition to allow `require(esm)` ([0083def](https://github.com/unjs/confbox/commit/0083def))
+
+### 🏡 Chore
+
+- **release:** V0.2.1 ([8b0a277](https://github.com/unjs/confbox/commit/8b0a277))
+- Update deps ([c070ed1](https://github.com/unjs/confbox/commit/c070ed1))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- James Garbutt ([@43081j](https://github.com/43081j))
+
 ## v0.2.1
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.0...v0.2.1)
