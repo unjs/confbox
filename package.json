@@ -59,12 +59,12 @@
   "devDependencies": {
     "@types/ini": "^4.1.1",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.17.1",
+    "@types/node": "^22.18.0",
     "@vitest/coverage-v8": "^3.2.4",
     "automd": "^0.4.0",
     "changelogen": "^0.6.2",
     "detect-indent": "^7.0.1",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "eslint-config-unjs": "^0.5.0",
     "ini": "^5.0.0",
     "jiti": "^2.5.1",
@@ -77,9 +77,9 @@
     "smol-toml": "^1.4.2",
     "toml": "^3.0.0",
     "typescript": "^5.9.2",
-    "unbuild": "^3.6.0",
+    "unbuild": "^3.6.1",
     "vitest": "^3.2.4",
     "yaml": "^2.8.1"
   },
-  "packageManager": "pnpm@10.14.0"
+  "packageManager": "pnpm@10.15.1"
 }
