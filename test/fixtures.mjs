@@ -30,7 +30,7 @@ types:
     - 3
   object:
     key: value
-  'null': null
+  "null": null
   date: 1979-05-27T15:32:00.000Z
 `;
 
