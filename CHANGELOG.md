@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.4
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.3...v0.2.4)
+
+### 📦 Build
+
+- Fix jsonc ([39bcca7](https://github.com/unjs/confbox/commit/39bcca7))
+
+### 🏡 Chore
+
+- Apply automated updates ([4ad5ece](https://github.com/unjs/confbox/commit/4ad5ece))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.2.3
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.2...v0.2.3)
