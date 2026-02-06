@@ -54,7 +54,7 @@
     "json5": "^2.2.3",
     "jsonc-parser": "^3.3.1",
     "mitata": "^1.0.34",
-    "obuild": "^0.4.25",
+    "obuild": "^0.4.26",
     "oxfmt": "^0.28.0",
     "oxlint": "^1.43.0",
     "smol-toml": "^1.6.0",

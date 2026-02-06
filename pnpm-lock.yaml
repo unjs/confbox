@@ -54,8 +54,8 @@ importers:
         specifier: ^1.0.34
         version: 1.0.34
       obuild:
-        specifier: ^0.4.25
-        version: 0.4.25(@typescript/native-preview@7.0.0-dev.20260206.1)(magicast@0.5.2)(picomatch@4.0.3)(rollup@4.57.1)(typescript@5.9.3)
+        specifier: ^0.4.26
+        version: 0.4.26(@typescript/native-preview@7.0.0-dev.20260206.1)(magicast@0.5.2)(picomatch@4.0.3)(rollup@4.57.1)(typescript@5.9.3)
       oxfmt:
         specifier: ^0.28.0
         version: 0.28.0
@@ -1131,8 +1131,8 @@ packages:
   obug@2.1.1:
     resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
 
-  obuild@0.4.25:
-    resolution: {integrity: sha512-JscU6pKujFSgCHhO2F7qHpQfo3X8ppbng35U9DBcToNdmK0cfm2VCn1aGPJ4zrMn6w4mCmjkLDYj9EGrsyMlRw==}
+  obuild@0.4.26:
+    resolution: {integrity: sha512-G7CNu2hhBI/9j7Xvp+rVtwrpXoTBRp39Rw9T42Ntx0nxGv9+vEjIgOvAvwnt7dMaBWcQJmjZrwv512DKkazbew==}
     hasBin: true
 
   ofetch@1.5.1:
@@ -2249,7 +2249,7 @@ snapshots:
 
   obug@2.1.1: {}
 
-  obuild@0.4.25(@typescript/native-preview@7.0.0-dev.20260206.1)(magicast@0.5.2)(picomatch@4.0.3)(rollup@4.57.1)(typescript@5.9.3):
+  obuild@0.4.26(@typescript/native-preview@7.0.0-dev.20260206.1)(magicast@0.5.2)(picomatch@4.0.3)(rollup@4.57.1)(typescript@5.9.3):
     dependencies:
       c12: 3.3.3(magicast@0.5.2)
       consola: 3.4.2
