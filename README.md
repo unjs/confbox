@@ -37,13 +37,13 @@ npm install confbox
 yarn add confbox
 
 # pnpm
-pnpm install confbox
+pnpm add confbox
 
 # bun
 bun install confbox
 
 # deno
-deno install confbox
+deno install npm:confbox
 ```
 
 <!-- /automd -->
@@ -71,7 +71,7 @@ import {
 } from "confbox";
 ```
 
-**CDN** (Deno, Bun and Browsers)
+**CDN** (Deno and Browsers)
 
 ```js
 import {
