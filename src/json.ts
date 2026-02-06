@@ -5,10 +5,7 @@ import { getFormat, storeFormat, type FormatOptions } from "./_format";
  *
  * Indentation status is auto-detected and preserved when stringifying back using `stringifyJSON`
  */
-export function parseJSON<T = unknown>(
-  text: string,
-  options?: JSONParseOptions,
-): T {
+export function parseJSON<T = unknown>(text: string, options?: JSONParseOptions): T {
   const obj = JSON.parse(text, options?.reviver);
   storeFormat(text, obj, options);
   return obj as T;
@@ -19,10 +16,7 @@ export function parseJSON<T = unknown>(
  *
  * Indentation status is auto detected and preserved when using value from parseJSON.
  */
-export function stringifyJSON(
-  value: any,
-  options?: JSONStringifyOptions,
-): string {
+export function stringifyJSON(value: any, options?: JSONStringifyOptions): string {
   const format = getFormat(value, options);
   const str = JSON.stringify(value, options?.replacer, format.indent);
   return format.whitespace.start + str + format.whitespace.end;

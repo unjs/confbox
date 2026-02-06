@@ -12,10 +12,7 @@ import stringify from "json5/lib/stringify";
  * @param options Parsing options.
  * @returns The JavaScript value converted from the JSON5 string.
  */
-export function parseJSON5<T = unknown>(
-  text: string,
-  options?: JSON5ParseOptions,
-): T {
+export function parseJSON5<T = unknown>(text: string, options?: JSON5ParseOptions): T {
   const obj = parse(text, options?.reviver);
   storeFormat(text, obj, options);
   return obj as T;
@@ -28,10 +25,7 @@ export function parseJSON5<T = unknown>(
  * @param options
  * @returns The JSON string converted from the JavaScript value.
  */
-export function stringifyJSON5(
-  value: any,
-  options?: JSON5StringifyOptions,
-): string {
+export function stringifyJSON5(value: any, options?: JSON5StringifyOptions): string {
   const format = getFormat(value, options);
   const str = stringify(value, options?.replacer, format.indent);
   return format.whitespace.start + str + format.whitespace.end;

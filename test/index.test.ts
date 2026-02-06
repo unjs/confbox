@@ -46,9 +46,7 @@ describe("confbox", () => {
 
   describe("yaml", () => {
     it("parse", () => {
-      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(
-        fixtures.objWithDate,
-      );
+      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(fixtures.objWithDate);
     });
 
     it("stringify", () => {
@@ -64,15 +62,11 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyJSON(confbox.parseJSON(fixtures.json))).toBe(
-        fixtures.json,
-      );
+      expect(confbox.stringifyJSON(confbox.parseJSON(fixtures.json))).toBe(fixtures.json);
     });
 
     it("stringify from raw object", () => {
-      expect(confbox.stringifyJSON(JSON.parse(fixtures.json))).toBe(
-        fixtures.json.trim(),
-      );
+      expect(confbox.stringifyJSON(JSON.parse(fixtures.json))).toBe(fixtures.json.trim());
     });
   });
 
@@ -82,9 +76,7 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(
-        fixtures.ini,
-      );
+      expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(fixtures.ini);
     });
   });
 });

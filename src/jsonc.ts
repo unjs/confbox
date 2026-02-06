@@ -17,10 +17,7 @@ import { stringifyJSON } from "./json";
  * @param options Parsing options.
  * @returns The JavaScript value converted from the JSONC string.
  */
-export function parseJSONC<T = unknown>(
-  text: string,
-  options?: JSONCParseOptions,
-): T {
+export function parseJSONC<T = unknown>(text: string, options?: JSONCParseOptions): T {
   const obj = parse(text, options?.errors, options);
   storeFormat(text, obj, options);
   return obj as T;
@@ -35,10 +32,7 @@ export function parseJSONC<T = unknown>(
  * @param options
  * @returns The JSON string converted from the JavaScript value.
  */
-export function stringifyJSONC(
-  value: any,
-  options?: JSONCStringifyOptions,
-): string {
+export function stringifyJSONC(value: any, options?: JSONCStringifyOptions): string {
   return stringifyJSON(value, options);
 }
 

@@ -21,10 +21,7 @@ import { type FormatOptions, getFormat, storeFormat } from "./_format";
  * @param options Parsing options.
  * @returns The JavaScript value converted from the YAML string.
  */
-export function parseYAML<T = unknown>(
-  text: string,
-  options?: YAMLParseOptions,
-): T {
+export function parseYAML<T = unknown>(text: string, options?: YAMLParseOptions): T {
   const obj = load(text, options);
   storeFormat(text, obj, options);
   return obj as T;
@@ -39,13 +36,9 @@ export function parseYAML<T = unknown>(
  * @param options
  * @returns The YAML string converted from the JavaScript value.
  */
-export function stringifyYAML(
-  value: any,
-  options?: YAMLStringifyOptions,
-): string {
+export function stringifyYAML(value: any, options?: YAMLStringifyOptions): string {
   const format = getFormat(value, { preserveIndentation: false });
-  const indentSize =
-    typeof format.indent === "string" ? format.indent.length : format.indent;
+  const indentSize = typeof format.indent === "string" ? format.indent.length : format.indent;
   const str = dump(value, {
     indent: indentSize,
     ...options,

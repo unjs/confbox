@@ -3,18 +3,22 @@
   "version": "0.2.2",
   "description": "Compact YAML, TOML, JSONC, JSON5 and INI parser and serializer",
   "keywords": [
-    "yaml",
-    "toml",
-    "jsonc",
-    "json5",
-    "unjs",
     "config",
-    "ini"
+    "ini",
+    "json5",
+    "jsonc",
+    "toml",
+    "unjs",
+    "yaml"
   ],
-  "repository": "unjs/confbox",
   "license": "MIT",
-  "sideEffects": false,
+  "repository": "unjs/confbox",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
@@ -41,45 +45,42 @@
       "default": "./dist/ini.mjs"
     }
   },
-  "types": "./dist/index.d.mts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "unbuild",
     "dev": "vitest dev --coverage",
     "bench": "pnpm build && node test/bench.mjs",
-    "lint": "eslint && prettier -c src test",
-    "lint:fix": "eslint --fix && prettier -c src test -w",
+    "lint": "oxlint && oxfmt --check src test",
+    "lint:fix": "oxlint --fix && oxfmt --check src test -w",
     "prepack": "pnpm build",
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
     "test": "pnpm lint && pnpm test:types && vitest run --coverage",
-    "test:types": "tsc --noEmit --skipLibCheck"
+    "test:types": "tsgo --noEmit --skipLibCheck"
   },
   "devDependencies": {
     "@types/ini": "^4.1.1",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.18.0",
-    "@vitest/coverage-v8": "^3.2.4",
-    "automd": "^0.4.0",
+    "@types/node": "^25.2.1",
+    "@typescript/native-preview": "7.0.0-dev.20260206.1",
+    "@vitest/coverage-v8": "^4.0.18",
+    "automd": "^0.4.3",
     "changelogen": "^0.6.2",
-    "detect-indent": "^7.0.1",
-    "eslint": "^9.34.0",
-    "eslint-config-unjs": "^0.5.0",
-    "ini": "^5.0.0",
-    "jiti": "^2.5.1",
+    "detect-indent": "^7.0.2",
+    "eslint-config-unjs": "^0.6.2",
+    "ini": "^6.0.0",
+    "jiti": "^2.6.1",
     "js-toml": "^1.0.2",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "json5": "^2.2.3",
     "jsonc-parser": "^3.3.1",
     "mitata": "^1.0.34",
-    "prettier": "^3.6.2",
-    "smol-toml": "^1.4.2",
+    "oxfmt": "^0.28.0",
+    "oxlint": "^1.43.0",
+    "smol-toml": "^1.6.0",
     "toml": "^3.0.0",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "unbuild": "^3.6.1",
-    "vitest": "^3.2.4",
-    "yaml": "^2.8.1"
+    "vitest": "^4.0.18",
+    "yaml": "^2.8.2"
   },
-  "packageManager": "pnpm@10.15.1"
+  "packageManager": "pnpm@10.28.2"
 }

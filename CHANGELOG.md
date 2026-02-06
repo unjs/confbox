@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.2.2
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.1...v0.2.2)
@@ -50,7 +49,7 @@
 
 ### 📦 Build
 
-- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+- ⚠️ Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
 
 ### 🏡 Chore
 
@@ -66,7 +65,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+- ⚠️ Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
 
 ### ❤️ Contributors
 
@@ -179,11 +178,10 @@
 
 ### ❤️ Contributors
 
-- Uncenter 
+- Uncenter
 - Pooya Parsa ([@pi0](http://github.com/pi0))
 
 ## v0.1.1
-
 
 ### 💅 Refactors
 
@@ -208,4 +206,3 @@
 ### ❤️ Contributors
 
 - Pooya Parsa ([@pi0](http://github.com/pi0))
-
