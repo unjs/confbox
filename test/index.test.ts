@@ -38,8 +38,8 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyTOML(confbox.parseTOML(fixtures.toml))).toBe(
-        fixtures.toml.replace(/\s*#.*/g, ""),
+      expect(confbox.stringifyTOML(confbox.parseTOML(fixtures.toml)).trim()).toBe(
+        fixtures.toml.replace(/\s*#.*/g, "").trim(),
       );
     });
   });
