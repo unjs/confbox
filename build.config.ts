@@ -1,19 +1,23 @@
 import { rm, glob } from "node:fs/promises";
-import { defineBuildConfig } from "unbuild";
+import { defineBuildConfig } from "obuild/config";
 
 export default defineBuildConfig({
-  rollup: {
-    inlineDependencies: true,
-    esbuild: {
-      minify: true,
-    },
-  },
-  externals: [],
+  entries: [
+    {
+      type: "bundle",
+      input: [
+        "src/index.ts",
+        "src/ini.ts",
+        "src/json5.ts",
+        "src/jsonc.ts",
+        "src/toml.ts",
+        "src/yaml.ts",
+      ]
+    }
+  ],
   hooks: {
-    async "build:done"() {
-      for await (const file of glob("dist/**/*.d.ts")) {
-        await rm(file);
-      }
-    },
-  },
+    rolldownOutput(cfg) {
+      cfg.minify = true
+    }
+  }
 });
