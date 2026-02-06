@@ -1,4 +1,3 @@
-import { rm, glob } from "node:fs/promises";
 import { defineBuildConfig } from "obuild/config";
 
 export default defineBuildConfig({
