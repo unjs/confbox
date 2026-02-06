@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.2.3
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.2...v0.2.3)
+
+### 📦 Build
+
+- Migrate to obuild ([85d0b29](https://github.com/unjs/confbox/commit/85d0b29))
+
+### 🏡 Chore
+
+- Use oxfmt and oxlint ([3d4e533](https://github.com/unjs/confbox/commit/3d4e533))
+- Add ref to `THIRD-PARTY-LICENSES.md` in dist ([6aff10c](https://github.com/unjs/confbox/commit/6aff10c))
+- Lint ([e579731](https://github.com/unjs/confbox/commit/e579731))
+- Update lockfile ([dc55522](https://github.com/unjs/confbox/commit/dc55522))
+- Fix lint:fix script ([95d1a6c](https://github.com/unjs/confbox/commit/95d1a6c))
+
+### ✅ Tests
+
+- Trim toml output ([905d695](https://github.com/unjs/confbox/commit/905d695))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.2.2
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.1...v0.2.2)
