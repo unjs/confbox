@@ -41,8 +41,8 @@
   "devDependencies": {
     "@types/ini": "^4.1.1",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^25.2.1",
-    "@typescript/native-preview": "7.0.0-dev.20260206.1",
+    "@types/node": "^25.2.3",
+    "@typescript/native-preview": "7.0.0-dev.20260215.1",
     "@vitest/coverage-v8": "^4.0.18",
     "automd": "^0.4.3",
     "changelogen": "^0.6.2",
@@ -54,14 +54,14 @@
     "json5": "^2.2.3",
     "jsonc-parser": "^3.3.1",
     "mitata": "^1.0.34",
-    "obuild": "^0.4.26",
-    "oxfmt": "^0.28.0",
-    "oxlint": "^1.43.0",
+    "obuild": "^0.4.27",
+    "oxfmt": "^0.32.0",
+    "oxlint": "^1.47.0",
     "smol-toml": "^1.6.0",
     "toml": "^3.0.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18",
     "yaml": "^2.8.2"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.29.3"
 }
