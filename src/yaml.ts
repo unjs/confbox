@@ -48,7 +48,7 @@ export function stringifyYAML(value: any, options?: YAMLStringifyOptions): strin
 
 // --- Types ---
 
-export type { YAMLException };
+export { YAMLException };
 
 export interface YAMLParseOptions extends FormatOptions {
   /** string to be used as a file path in error/warning messages. */
