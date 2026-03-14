@@ -1,4 +1,4 @@
-import { load, dump } from "js-yaml";
+import { load, dump, YAMLException } from "js-yaml";
 import { type FormatOptions, getFormat, storeFormat } from "./_format";
 
 // Source: https://github.com/nodeca/js-yaml
@@ -48,6 +48,8 @@ export function stringifyYAML(value: any, options?: YAMLStringifyOptions): strin
 
 // --- Types ---
 
+export type { YAMLException };
+
 export interface YAMLParseOptions extends FormatOptions {
   /** string to be used as a file path in error/warning messages. */
   filename?: string | undefined;
@@ -95,20 +97,3 @@ export interface YAMLStringifyOptions extends FormatOptions {
   replacer?: ((key: string, value: any) => any) | undefined;
 }
 
-interface Mark {
-  buffer: string;
-  column: number;
-  line: number;
-  name: string;
-  position: number;
-  snippet: string;
-}
-
-declare class YAMLException extends Error {
-  constructor(reason?: string, mark?: Mark);
-  toString(compact?: boolean): string;
-  name: string;
-  reason: string;
-  message: string;
-  mark: Mark;
-}

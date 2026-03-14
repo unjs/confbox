@@ -5,7 +5,7 @@ export { parseJSONC, stringifyJSONC } from "./jsonc";
 export type { JSONCParseError, JSONCParseOptions } from "./jsonc";
 
 export { parseYAML, stringifyYAML } from "./yaml";
-export type { YAMLParseOptions, YAMLStringifyOptions } from "./yaml";
+export type { YAMLParseOptions, YAMLStringifyOptions, YAMLException } from "./yaml";
 
 export { parseJSON, stringifyJSON } from "./json";
 export type { JSONParseOptions, JSONStringifyOptions } from "./json";
