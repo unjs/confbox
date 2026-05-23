@@ -9,73 +9,73 @@ importers:
   .:
     devDependencies:
       '@types/ini':
-        specifier: ^4.1.1
+        specifier: 4.1.1
         version: 4.1.1
       '@types/js-yaml':
-        specifier: ^4.0.9
+        specifier: 4.0.9
         version: 4.0.9
       '@types/node':
-        specifier: ^25.2.1
+        specifier: 25.2.1
         version: 25.2.1
       '@typescript/native-preview':
         specifier: 7.0.0-dev.20260206.1
         version: 7.0.0-dev.20260206.1
       '@vitest/coverage-v8':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18(@types/node@25.2.1)(jiti@2.6.1)(yaml@2.8.2))
       automd:
-        specifier: ^0.4.3
+        specifier: 0.4.3
         version: 0.4.3(magicast@0.5.2)
       changelogen:
-        specifier: ^0.6.2
+        specifier: 0.6.2
         version: 0.6.2(magicast@0.5.2)
       detect-indent:
-        specifier: ^7.0.2
+        specifier: 7.0.2
         version: 7.0.2
       ini:
-        specifier: ^6.0.0
+        specifier: 6.0.0
         version: 6.0.0
       jiti:
-        specifier: ^2.6.1
+        specifier: 2.6.1
         version: 2.6.1
       js-toml:
-        specifier: ^1.0.2
+        specifier: 1.0.2
         version: 1.0.2
       js-yaml:
-        specifier: ^4.1.1
+        specifier: 4.1.1
         version: 4.1.1
       json5:
-        specifier: ^2.2.3
+        specifier: 2.2.3
         version: 2.2.3
       jsonc-parser:
-        specifier: ^3.3.1
+        specifier: 3.3.1
         version: 3.3.1
       mitata:
-        specifier: ^1.0.34
+        specifier: 1.0.34
         version: 1.0.34
       obuild:
-        specifier: ^0.4.26
+        specifier: 0.4.26
         version: 0.4.26(@typescript/native-preview@7.0.0-dev.20260206.1)(magicast@0.5.2)(picomatch@4.0.3)(rollup@4.57.1)(typescript@5.9.3)
       oxfmt:
-        specifier: ^0.28.0
+        specifier: 0.28.0
         version: 0.28.0
       oxlint:
-        specifier: ^1.43.0
+        specifier: 1.43.0
         version: 1.43.0
       smol-toml:
-        specifier: ^1.6.0
+        specifier: 1.6.0
         version: 1.6.0
       toml:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       typescript:
-        specifier: ^5.9.3
+        specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(@types/node@25.2.1)(jiti@2.6.1)(yaml@2.8.2)
       yaml:
-        specifier: ^2.8.2
+        specifier: 2.8.2
         version: 2.8.2
 
 packages:
