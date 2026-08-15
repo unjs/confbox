@@ -7,6 +7,7 @@ export default defineBuildConfig({
       input: [
         "src/index.ts",
         "src/ini.ts",
+        "src/json.ts",
         "src/json5.ts",
         "src/jsonc.ts",
         "src/toml.ts",

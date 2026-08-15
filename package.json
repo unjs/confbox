@@ -22,6 +22,7 @@
   "exports": {
     ".": "./dist/index.mjs",
     "./ini": "./dist/ini.mjs",
+    "./json": "./dist/json.mjs",
     "./json5": "./dist/json5.mjs",
     "./jsonc": "./dist/jsonc.mjs",
     "./toml": "./dist/toml.mjs",
