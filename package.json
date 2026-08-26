@@ -50,7 +50,7 @@
     "detect-indent": "^7.0.2",
     "ini": "^6.0.0",
     "jiti": "^2.6.1",
-    "js-toml": "^1.0.2",
+    "js-toml": "^2.0.1",
     "js-yaml": "^4.1.1",
     "json5": "^2.2.3",
     "jsonc-parser": "^3.3.1",
