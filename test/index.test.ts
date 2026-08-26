@@ -79,4 +79,12 @@ describe("confbox", () => {
       expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(fixtures.ini);
     });
   });
+
+  describe("format storage", () => {
+    it("does not pollute object with symbol properties", () => {
+      const parsed = confbox.parseJSON('{\n  "foo": "bar"\n}');
+      expect(Object.getOwnPropertySymbols(parsed)).toEqual([]);
+      expect(confbox.stringifyJSON(parsed)).toBe('{\n  "foo": "bar"\n}');
+    });
+  });
 });
