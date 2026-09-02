@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.3.0
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.4...v0.3.0)
+
+### 🚀 Enhancements
+
+- Expose `confbox/json` subpath ([#89](https://github.com/unjs/confbox/pull/89))
+- **yaml:** ⚠️  Bump js-yaml to v5 ([#92](https://github.com/unjs/confbox/pull/92))
+- **jsonc:** ⚠️  Migrate from `jsonc-parser` to `strip-json-comments` ([#53](https://github.com/unjs/confbox/pull/53))
+- **yaml:** Expose `YAMLException` ([a0ae05e](https://github.com/unjs/confbox/commit/a0ae05e))
+
+### 🏡 Chore
+
+- Update deps ([e20821d](https://github.com/unjs/confbox/commit/e20821d))
+- Init agents.md ([cbda46f](https://github.com/unjs/confbox/commit/cbda46f))
+- Bump non breaking deps ([d604c4d](https://github.com/unjs/confbox/commit/d604c4d))
+- Update pnpm ([80a5f07](https://github.com/unjs/confbox/commit/80a5f07))
+- Update release script ([d410ce1](https://github.com/unjs/confbox/commit/d410ce1))
+
+#### ⚠️ Breaking Changes
+
+- **yaml:** ⚠️  Bump js-yaml to v5 ([#92](https://github.com/unjs/confbox/pull/92))
+- **jsonc:** ⚠️  Migrate from `jsonc-parser` to `strip-json-comments` ([#53](https://github.com/unjs/confbox/pull/53))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Kricsleo ([@kricsleo](https://github.com/kricsleo))
+- Pi0x <x@pi0.io>
+- Lubos ([@mrlubos](https://github.com/mrlubos))
+
 ## v0.2.4
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.3...v0.2.4)

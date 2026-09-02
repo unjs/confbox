@@ -1,6 +1,6 @@
 {
   "name": "confbox",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Compact YAML, TOML, JSONC, JSON5 and INI parser and serializer",
   "keywords": [
     "config",
