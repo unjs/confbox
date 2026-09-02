@@ -1,0 +1,5 @@
+allowBuilds:
+  '@parcel/watcher': false
+  core-js-pure: false
+minimumReleaseAgeExclude:
+  - obuild@0.4.39
