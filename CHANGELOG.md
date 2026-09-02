@@ -1,5 +1,66 @@
 # Changelog
 
+## v0.2.4
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.3...v0.2.4)
+
+### 📦 Build
+
+- Fix jsonc ([39bcca7](https://github.com/unjs/confbox/commit/39bcca7))
+
+### 🏡 Chore
+
+- Apply automated updates ([4ad5ece](https://github.com/unjs/confbox/commit/4ad5ece))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
+## v0.2.3
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.2...v0.2.3)
+
+### 📦 Build
+
+- Migrate to obuild ([85d0b29](https://github.com/unjs/confbox/commit/85d0b29))
+
+### 🏡 Chore
+
+- Use oxfmt and oxlint ([3d4e533](https://github.com/unjs/confbox/commit/3d4e533))
+- Add ref to `THIRD-PARTY-LICENSES.md` in dist ([6aff10c](https://github.com/unjs/confbox/commit/6aff10c))
+- Lint ([e579731](https://github.com/unjs/confbox/commit/e579731))
+- Update lockfile ([dc55522](https://github.com/unjs/confbox/commit/dc55522))
+- Fix lint:fix script ([95d1a6c](https://github.com/unjs/confbox/commit/95d1a6c))
+
+### ✅ Tests
+
+- Trim toml output ([905d695](https://github.com/unjs/confbox/commit/905d695))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
+## v0.2.2
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- **json:** Default indentation to `2` ([#56](https://github.com/unjs/confbox/pull/56))
+
+### 📦 Build
+
+- Use `default` condition to allow `require(esm)` ([0083def](https://github.com/unjs/confbox/commit/0083def))
+
+### 🏡 Chore
+
+- **release:** V0.2.1 ([8b0a277](https://github.com/unjs/confbox/commit/8b0a277))
+- Update deps ([c070ed1](https://github.com/unjs/confbox/commit/c070ed1))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- James Garbutt ([@43081j](https://github.com/43081j))
 
 ## v0.2.1
 
@@ -28,7 +89,7 @@
 
 ### 📦 Build
 
-- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+- ⚠️ Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
 
 ### 🏡 Chore
 
@@ -44,7 +105,7 @@
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
+- ⚠️ Esm-only dist ([2faa1f6](https://github.com/unjs/confbox/commit/2faa1f6))
 
 ### ❤️ Contributors
 
@@ -157,11 +218,10 @@
 
 ### ❤️ Contributors
 
-- Uncenter 
+- Uncenter
 - Pooya Parsa ([@pi0](http://github.com/pi0))
 
 ## v0.1.1
-
 
 ### 💅 Refactors
 
@@ -186,4 +246,3 @@
 ### ❤️ Contributors
 
 - Pooya Parsa ([@pi0](http://github.com/pi0))
-

@@ -5,10 +5,7 @@ import { parse, stringify } from "ini";
  *
  * **Note:** Style and indentation are not preserved currently.
  */
-export function parseINI<T = unknown>(
-  text: string,
-  options?: INIParseOptions,
-): T {
+export function parseINI<T = unknown>(text: string, options?: INIParseOptions): T {
   const obj = parse(text, options);
   return obj as T;
 }
@@ -18,10 +15,7 @@ export function parseINI<T = unknown>(
  *
  * **Note:** Style and indentation are not preserved currently.
  */
-export function stringifyINI(
-  value: any,
-  options?: INIStringifyOptions,
-): string {
+export function stringifyINI(value: any, options?: INIStringifyOptions): string {
   const str = stringify(value, {
     whitespace: true,
     ...options,

@@ -36,10 +36,7 @@ const ftmSymbol = Symbol.for("__confbox_fmt__");
 const WhitespaceStartRe = /^(\s+)/;
 const WhitespaceEndRe = /(\s+)$/;
 
-export function detectFormat(
-  text: string,
-  opts: FormatOptions = {},
-): FormatInfo {
+export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo {
   // Keep ref to a sample of the original text only if need to later detect indent to reduce memory usage.
   const sample =
     opts.indent === undefined &&
@@ -60,11 +57,7 @@ export function detectFormat(
   };
 }
 
-export function storeFormat(
-  text: string,
-  obj: any,
-  opts?: FormatOptions,
-): void {
+export function storeFormat(text: string, obj: any, opts?: FormatOptions): void {
   if (!obj || typeof obj !== "object") {
     return;
   }
@@ -85,7 +78,7 @@ export function getFormat(
   whitespace: { start: string; end: string };
 } {
   if (!obj || typeof obj !== "object" || !(ftmSymbol in obj)) {
-    return { indent: opts?.indent, whitespace: { start: "", end: "" } };
+    return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" } };
   }
   const format = obj[ftmSymbol] as FormatInfo;
   const indent = opts?.indent || detectIndent(format.sample || "").indent;

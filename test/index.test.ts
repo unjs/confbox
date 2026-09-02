@@ -38,17 +38,15 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyTOML(confbox.parseTOML(fixtures.toml))).toBe(
-        fixtures.toml.replace(/\s*#.*/g, ""),
+      expect(confbox.stringifyTOML(confbox.parseTOML(fixtures.toml)).trim()).toBe(
+        fixtures.toml.replace(/\s*#.*/g, "").trim(),
       );
     });
   });
 
   describe("yaml", () => {
     it("parse", () => {
-      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(
-        fixtures.objWithDate,
-      );
+      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(fixtures.obj);
     });
 
     it("stringify", () => {
@@ -64,9 +62,11 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyJSON(confbox.parseJSON(fixtures.json))).toBe(
-        fixtures.json,
-      );
+      expect(confbox.stringifyJSON(confbox.parseJSON(fixtures.json))).toBe(fixtures.json);
+    });
+
+    it("stringify from raw object", () => {
+      expect(confbox.stringifyJSON(JSON.parse(fixtures.json))).toBe(fixtures.json.trim());
     });
   });
 
@@ -76,9 +76,7 @@ describe("confbox", () => {
     });
 
     it("stringify", () => {
-      expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(
-        fixtures.ini,
-      );
+      expect(confbox.stringifyINI(confbox.parseINI(fixtures.ini))).toBe(fixtures.ini);
     });
   });
 });

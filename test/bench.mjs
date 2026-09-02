@@ -3,7 +3,7 @@ import { bench, run, summary } from "mitata";
 import nodeToml from "toml";
 import * as jsToml from "js-toml";
 import * as smolToml from "smol-toml";
-import jsYaml from "js-yaml";
+import * as jsYaml from "js-yaml";
 import yaml from "yaml";
 import * as json5 from "json5";
 import * as jsoncParser from "jsonc-parser";
