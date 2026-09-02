@@ -1,5 +1,6 @@
 import { expect, it, describe } from "vitest";
 import * as confbox from "../src";
+import * as confboxYaml from "../src/yaml";
 import * as fixtures from "./fixtures.mjs";
 
 describe("confbox", () => {
@@ -53,6 +54,10 @@ describe("confbox", () => {
       expect(confbox.stringifyYAML(confbox.parseYAML(fixtures.yaml))).toBe(
         fixtures.yaml.replace(/\s*#.*/g, ""),
       );
+    });
+
+    it("throws YAMLException", () => {
+      expect(() => confbox.parseYAML("a: 1\na: 2")).toThrow(confboxYaml.YAMLException);
     });
   });
 

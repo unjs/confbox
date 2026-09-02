@@ -1,4 +1,4 @@
-import { load, dump } from "js-yaml";
+import { load, dump, YAMLException } from "js-yaml";
 import { type FormatOptions, getFormat, storeFormat } from "./_format";
 
 // Source: https://github.com/nodeca/js-yaml
@@ -46,6 +46,15 @@ export function stringifyYAML(value: any, options?: YAMLStringifyOptions): strin
   });
   return format.whitespace.start + str.trim() + format.whitespace.end;
 }
+
+/**
+ * The error thrown by {@link parseYAML} when the input cannot be parsed.
+ *
+ * @NOTE confbox bundles its own copy of `js-yaml`, so errors thrown by {@link parseYAML} are
+ * **not** instances of the `YAMLException` from a separately installed `js-yaml`. Import it from
+ * here to narrow them with `instanceof`.
+ */
+export { YAMLException };
 
 // --- Types ---
 
