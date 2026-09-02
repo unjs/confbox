@@ -1,5 +1,5 @@
 import { storeFormat, type FormatOptions } from "./_format";
-import stripeJSONComments from "strip-json-comments";
+import stripJSONComments from "strip-json-comments";
 import { stringifyJSON } from "./json";
 
 // Source: https://github.com/microsoft/node-jsonc-parser
@@ -19,7 +19,7 @@ import { stringifyJSON } from "./json";
  */
 export function parseJSONC<T = unknown>(text: string, options?: JSONCParseOptions): T {
   const obj = JSON.parse(
-    stripeJSONComments(text, {
+    stripJSONComments(text, {
       trailingCommas: options?.allowTrailingComma,
     }),
   );
