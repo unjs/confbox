@@ -57,6 +57,7 @@
     "oxfmt": ">=0.66.0",
     "oxlint": "^1.81.0",
     "smol-toml": "^1.8.0",
+    "strip-json-comments": "^5.0.1",
     "toml": "^5.0.0",
     "typescript": "^7",
     "vitest": "^4.1.11",

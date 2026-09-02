@@ -1,5 +1,5 @@
 import { storeFormat, type FormatOptions } from "./_format";
-import { parse } from "jsonc-parser";
+import stripJSONComments from "strip-json-comments";
 import { stringifyJSON } from "./json";
 
 // Source: https://github.com/microsoft/node-jsonc-parser
@@ -18,7 +18,11 @@ import { stringifyJSON } from "./json";
  * @returns The JavaScript value converted from the JSONC string.
  */
 export function parseJSONC<T = unknown>(text: string, options?: JSONCParseOptions): T {
-  const obj = parse(text, options?.errors, options);
+  const obj = JSON.parse(
+    stripJSONComments(text, {
+      trailingCommas: options?.allowTrailingComma,
+    }),
+  );
   storeFormat(text, obj, options);
   return obj as T;
 }
@@ -39,16 +43,7 @@ export function stringifyJSONC(value: any, options?: JSONCStringifyOptions): str
 // --- Types ---
 
 export interface JSONCParseOptions extends FormatOptions {
-  disallowComments?: boolean;
   allowTrailingComma?: boolean;
-  allowEmptyContent?: boolean;
-  errors?: JSONCParseError[];
 }
 
 export interface JSONCStringifyOptions extends FormatOptions {}
-
-export interface JSONCParseError {
-  error: number;
-  offset: number;
-  length: number;
-}
