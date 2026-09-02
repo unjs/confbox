@@ -46,7 +46,7 @@ describe("confbox", () => {
 
   describe("yaml", () => {
     it("parse", () => {
-      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(fixtures.objWithDate);
+      expect(confbox.parseYAML(fixtures.yaml)).toMatchObject(fixtures.obj);
     });
 
     it("stringify", () => {
