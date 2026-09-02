@@ -48,7 +48,7 @@
     "automd": "^0.4.3",
     "changelogen": "^0.6.2",
     "detect-indent": "^7.0.2",
-    "ini": "^6.0.0",
+    "ini": "^7.0.0",
     "jiti": "^2.6.1",
     "js-toml": "^1.0.2",
     "js-yaml": "^4.1.1",
