@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
       js-yaml:
-        specifier: ^4.1.1
-        version: 4.1.1
+        specifier: ^5.4.1
+        version: 5.4.1
       json5:
         specifier: ^2.2.3
         version: 2.2.3
@@ -1054,8 +1054,8 @@ packages:
   js-toml@1.0.2:
     resolution: {integrity: sha512-/7IQ//bzn2a/5IDazPUNzlW7bsjxS51cxciYZDR+Z+3Le60yzT0YfI8KOWqTtBcZkXXVklhWd2OuGd8ZksB0wQ==}
 
-  js-yaml@4.1.1:
-    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+  js-yaml@5.4.1:
+    resolution: {integrity: sha512-28R/k+NAjeuf7+CKlTxWZVExJGwVVLwY06DgEnOMz2gEpfNkDcD7QvyiVPT0xy0XXhU8vHsd4Ot42OOPdJG7dQ==}
     hasBin: true
 
   jsesc@3.1.0:
@@ -2184,7 +2184,7 @@ snapshots:
       chevrotain: 11.1.1
       xregexp: 5.1.2
 
-  js-yaml@4.1.1:
+  js-yaml@5.4.1:
     dependencies:
       argparse: 2.0.1
 
