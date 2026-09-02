@@ -31,7 +31,7 @@ types:
   object:
     key: value
   'null': null
-  date: 1979-05-27T15:32:00.000Z
+  date: '1979-05-27T07:32:00-08:00'
 `;
 
 export const toml = /* toml */ `
