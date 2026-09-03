@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.1
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.3.0...v0.3.1)
+
+### 🩹 Fixes
+
+- Strip leading UTF-8 BOM before parsing ([#94](https://github.com/unjs/confbox/pull/94))
+
+### ❤️ Contributors
+
+- Pi0x <x@pi0.io>
+
 ## v0.3.0
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.2.4...v0.3.0)
