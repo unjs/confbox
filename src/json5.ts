@@ -1,4 +1,4 @@
-import { getFormat, storeFormat, type FormatOptions } from "./_format";
+import { getFormat, storeFormat, stripBOM, type FormatOptions } from "./_format";
 import parse from "json5/lib/parse.js";
 import stringify from "json5/lib/stringify";
 
@@ -13,7 +13,7 @@ import stringify from "json5/lib/stringify";
  * @returns The JavaScript value converted from the JSON5 string.
  */
 export function parseJSON5<T = unknown>(text: string, options?: JSON5ParseOptions): T {
-  const obj = parse(text, options?.reviver);
+  const obj = parse(stripBOM(text), options?.reviver);
   storeFormat(text, obj, options);
   return obj as T;
 }

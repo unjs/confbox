@@ -75,6 +75,43 @@ describe("confbox", () => {
     });
   });
 
+  describe("bom", () => {
+    const BOM = "\uFEFF";
+
+    const roundTrip = {
+      json: [confbox.parseJSON, confbox.stringifyJSON],
+      jsonc: [confbox.parseJSONC, confbox.stringifyJSONC],
+      json5: [confbox.parseJSON5, confbox.stringifyJSON5],
+      yaml: [confbox.parseYAML, confbox.stringifyYAML],
+      toml: [confbox.parseTOML, confbox.stringifyTOML],
+    } as const;
+
+    for (const [format, [parse, stringify]] of Object.entries(roundTrip)) {
+      const fixture = (fixtures as Record<string, string>)[format].trim();
+
+      it(`${format} parses with a leading BOM`, () => {
+        expect(parse(BOM + fixture)).toMatchObject(parse(fixture) as object);
+      });
+
+      it(`${format} preserves the BOM when stringifying back`, () => {
+        expect(stringify(parse(BOM + fixture))).toBe(BOM + stringify(parse(fixture)));
+      });
+
+      // `parseTOML` takes no options, so it always preserves whitespace.
+      if (format !== "toml") {
+        it(`${format} drops the BOM with preserveWhitespace: false`, () => {
+          expect(stringify(parse(BOM + fixture, { preserveWhitespace: false }))).not.toContain(BOM);
+        });
+      }
+    }
+
+    it("ini parses with a leading BOM", () => {
+      expect(confbox.parseINI(BOM + fixtures.ini)).toMatchObject(
+        confbox.parseINI(fixtures.ini) as object,
+      );
+    });
+  });
+
   describe("ini", () => {
     it.skip("parse", () => {
       expect(confbox.parseINI(fixtures.ini)).toMatchObject(fixtures.obj);

@@ -1,4 +1,4 @@
-import { storeFormat, type FormatOptions } from "./_format";
+import { storeFormat, stripBOM, type FormatOptions } from "./_format";
 import stripJSONComments from "strip-json-comments";
 import { stringifyJSON } from "./json";
 
@@ -19,7 +19,7 @@ import { stringifyJSON } from "./json";
  */
 export function parseJSONC<T = unknown>(text: string, options?: JSONCParseOptions): T {
   const obj = JSON.parse(
-    stripJSONComments(text, {
+    stripJSONComments(stripBOM(text), {
       trailingCommas: options?.allowTrailingComma,
     }),
   );

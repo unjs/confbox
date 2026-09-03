@@ -33,15 +33,26 @@ export interface FormatOptions {
 
 const ftmSymbol = Symbol.for("__confbox_fmt__");
 
+// Note: `\s` matches `U+FEFF`, so a leading BOM is captured (and later restored) as whitespace.
 const WhitespaceStartRe = /^(\s+)/;
 const WhitespaceEndRe = /(\s+)$/;
+
+/**
+ * Removes a leading UTF-8 BOM (`U+FEFF`) so that upstream parsers never see it.
+ *
+ * The BOM is still captured as leading whitespace by {@link detectFormat}, so it is restored
+ * when stringifying back (unless `preserveWhitespace` is `false`).
+ */
+export function stripBOM(text: string): string {
+  return text.charCodeAt(0) === 0xfe_ff ? text.slice(1) : text;
+}
 
 export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo {
   // Keep ref to a sample of the original text only if need to later detect indent to reduce memory usage.
   const sample =
     opts.indent === undefined &&
     opts.preserveIndentation !== false &&
-    text.slice(0, opts?.sampleSize || 1024);
+    stripBOM(text).slice(0, opts?.sampleSize || 1024);
 
   const whiteSpace =
     opts.preserveWhitespace === false

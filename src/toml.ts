@@ -1,4 +1,4 @@
-import { getFormat, storeFormat } from "./_format";
+import { getFormat, storeFormat, stripBOM } from "./_format";
 import { parse, stringify } from "smol-toml";
 
 // Source: https://github.com/squirrelchat/smol-toml
@@ -13,7 +13,7 @@ import { parse, stringify } from "smol-toml";
  * @returns The JavaScript value converted from the TOML string.
  */
 export function parseTOML<T = unknown>(text: string): T {
-  const obj = parse(text);
+  const obj = parse(stripBOM(text));
   storeFormat(text, obj, { preserveIndentation: false });
   return obj as T;
 }
