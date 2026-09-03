@@ -1,4 +1,5 @@
 import { parse, stringify } from "ini";
+import { stripBOM } from "./_format";
 
 /**
  * Converts an [INI](https://www.ini.org/ini-en.html) string into an object.
@@ -6,7 +7,7 @@ import { parse, stringify } from "ini";
  * **Note:** Style and indentation are not preserved currently.
  */
 export function parseINI<T = unknown>(text: string, options?: INIParseOptions): T {
-  const obj = parse(text, options);
+  const obj = parse(stripBOM(text), options);
   return obj as T;
 }
 

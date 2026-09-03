@@ -1,4 +1,4 @@
-import { getFormat, storeFormat, type FormatOptions } from "./_format";
+import { getFormat, storeFormat, stripBOM, type FormatOptions } from "./_format";
 
 /**
  * Converts a [JSON](https://www.json.org/json-en.html) string into an object.
@@ -6,7 +6,7 @@ import { getFormat, storeFormat, type FormatOptions } from "./_format";
  * Indentation status is auto-detected and preserved when stringifying back using `stringifyJSON`
  */
 export function parseJSON<T = unknown>(text: string, options?: JSONParseOptions): T {
-  const obj = JSON.parse(text, options?.reviver);
+  const obj = JSON.parse(stripBOM(text), options?.reviver);
   storeFormat(text, obj, options);
   return obj as T;
 }

@@ -1,5 +1,5 @@
 import { load, dump, YAMLException } from "js-yaml";
-import { type FormatOptions, getFormat, storeFormat } from "./_format";
+import { type FormatOptions, getFormat, storeFormat, stripBOM } from "./_format";
 
 // Source: https://github.com/nodeca/js-yaml
 // Types:  https://github.com/nodeca/js-yaml/blob/master/dist/js-yaml.d.ts
@@ -23,7 +23,7 @@ import { type FormatOptions, getFormat, storeFormat } from "./_format";
  * @returns The JavaScript value converted from the YAML string.
  */
 export function parseYAML<T = unknown>(text: string, options?: YAMLParseOptions): T {
-  const obj = load(text, options);
+  const obj = load(stripBOM(text), options);
   storeFormat(text, obj, options);
   return obj as T;
 }
