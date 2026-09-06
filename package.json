@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/ini": "^4.1.1",
     "@types/node": "^26.4.0",
-    "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/coverage-v8": "^5.0.0",
     "automd": "^0.4.3",
     "changelogen": "^0.6.2",
     "detect-indent": "^7.0.2",
@@ -60,7 +60,7 @@
     "strip-json-comments": "^5.0.3",
     "toml": "^5.0.0",
     "typescript": "^7",
-    "vitest": "^4.1.11",
+    "vitest": "^5.0.0",
     "yaml": "^2.9.0"
   },
   "packageManager": "pnpm@11.25.0"
