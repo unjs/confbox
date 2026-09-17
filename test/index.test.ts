@@ -112,6 +112,31 @@ describe("confbox", () => {
     });
   });
 
+  describe("indent", () => {
+    // `stringifyJSON({ a: 1 }, { indent: 0 })` has always minified, matching `JSON.stringify`.
+    // On a value from `parse*` the stored format used to win because `0` is falsy, so the same
+    // option silently produced indented output — the one case where it actually matters.
+    const minified = {
+      json: [confbox.parseJSON, confbox.stringifyJSON, '{"a":1,"b":{"c":2}}'],
+      jsonc: [confbox.parseJSONC, confbox.stringifyJSONC, '{"a":1,"b":{"c":2}}'],
+      json5: [confbox.parseJSON5, confbox.stringifyJSON5, "{a:1,b:{c:2}}"],
+    } as const;
+
+    const indented = '{\n    "a": 1,\n    "b": { "c": 2 }\n}';
+
+    for (const [format, [parse, stringify, expected]] of Object.entries(minified)) {
+      for (const indent of [0, ""] as const) {
+        it(`${format} honors indent: ${JSON.stringify(indent)} on a parsed value`, () => {
+          expect(stringify(parse(indented), { indent })).toBe(expected);
+        });
+      }
+
+      it(`${format} still auto-detects indentation when no indent is given`, () => {
+        expect(stringify(parse(indented))).toContain("\n    ");
+      });
+    }
+  });
+
   describe("ini", () => {
     it.skip("parse", () => {
       expect(confbox.parseINI(fixtures.ini)).toMatchObject(fixtures.obj);
