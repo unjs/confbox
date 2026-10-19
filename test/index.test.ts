@@ -56,6 +56,14 @@ describe("confbox", () => {
       );
     });
 
+    it("stringify nested values added to a flat document", () => {
+      const obj = confbox.parseYAML<any>("a: 1\n");
+      obj.b = { c: [1, 2] };
+      const str = confbox.stringifyYAML(obj);
+      expect(str).toBe("a: 1\nb:\n  c:\n    - 1\n    - 2\n");
+      expect(confbox.parseYAML(str)).toEqual({ a: 1, b: { c: [1, 2] } });
+    });
+
     it("throws YAMLException", () => {
       expect(() => confbox.parseYAML("a: 1\na: 2")).toThrow(confboxYaml.YAMLException);
     });
