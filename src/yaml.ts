@@ -39,7 +39,9 @@ export function parseYAML<T = unknown>(text: string, options?: YAMLParseOptions)
  */
 export function stringifyYAML(value: any, options?: YAMLStringifyOptions): string {
   const format = getFormat(value, { preserveIndentation: false });
-  const indentSize = typeof format.indent === "string" ? format.indent.length : format.indent;
+  // A flat document has no indentation to detect, but YAML needs a non-zero indent for nesting.
+  const indentSize =
+    (typeof format.indent === "string" ? format.indent.length : format.indent) || 2;
   const str = dump(value, {
     indent: indentSize,
     ...options,
