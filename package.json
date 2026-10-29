@@ -63,5 +63,5 @@
     "vitest": "^4.1.12",
     "yaml": "^2.9.1"
   },
-  "packageManager": "pnpm@11.25.0"
+  "packageManager": "pnpm@11.28.8"
 }
