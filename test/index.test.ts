@@ -164,6 +164,37 @@ describe("confbox", () => {
         expect(stringify(parse(indented))).toBe(detected);
       });
     }
+
+    // Parse-time `indent` / `preserveIndentation: false` used to be dropped, so the value came
+    // back minified instead of with the requested (or default) indentation.
+    const parseTimeCases = {
+      json: [confbox.parseJSON, confbox.stringifyJSON, '{\n    "a": 1\n}', '{\n  "a": 1\n}'],
+      jsonc: [confbox.parseJSONC, confbox.stringifyJSONC, '{\n    "a": 1\n}', '{\n  "a": 1\n}'],
+      json5: [confbox.parseJSON5, confbox.stringifyJSON5, "{\n    a: 1,\n}", "{\n  a: 1,\n}"],
+      yaml: [confbox.parseYAML, confbox.stringifyYAML, "a:\n    b: 1\n", "a:\n  b: 1\n"],
+    } as const;
+
+    for (const [format, [parse, stringify, indent4, indent2]] of Object.entries(parseTimeCases)) {
+      const text = format === "yaml" ? "a:\n  b: 1\n" : '{\n  "a": 1\n}';
+
+      it(`${format} keeps a parse-time indent when stringifying`, () => {
+        expect(stringify(parse(text, { indent: 4 }))).toBe(indent4);
+      });
+
+      it(`${format} lets a stringify-time indent override the parse-time one`, () => {
+        expect(stringify(parse(text, { indent: 4 }), { indent: 2 })).toBe(indent2);
+      });
+
+      it(`${format} uses the default indent with preserveIndentation: false`, () => {
+        expect(stringify(parse(indent4, { preserveIndentation: false }))).toBe(indent2);
+      });
+    }
+
+    it("json keeps a parse-time indent of 0", () => {
+      expect(confbox.stringifyJSON(confbox.parseJSON('{\n  "a": 1\n}', { indent: 0 }))).toBe(
+        '{"a":1}',
+      );
+    });
   });
 
   describe("ini", () => {

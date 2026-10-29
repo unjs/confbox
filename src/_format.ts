@@ -1,6 +1,7 @@
 import detectIndent from "detect-indent";
 
 export interface FormatInfo {
+  indent?: string | number;
   sample?: string;
   whiteSpace?: { start: string; end: string };
 }
@@ -10,6 +11,8 @@ export interface FormatOptions {
    * A String or Number object that's used to insert white space into the output JSON string for readability purposes.
    *
    * When provided, identation won't be auto detected anymore.
+   *
+   * When passed at parse time, it is remembered and used when stringifying the value back.
    */
   indent?: string | number;
 
@@ -50,9 +53,9 @@ export function stripBOM(text: string): string {
 export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo {
   // Keep ref to a sample of the original text only if need to later detect indent to reduce memory usage.
   const sample =
-    opts.indent === undefined &&
-    opts.preserveIndentation !== false &&
-    stripBOM(text).slice(0, opts?.sampleSize || 1024);
+    opts.indent === undefined && opts.preserveIndentation !== false
+      ? stripBOM(text).slice(0, opts?.sampleSize || 1024)
+      : undefined;
 
   const whiteSpace =
     opts.preserveWhitespace === false
@@ -63,6 +66,7 @@ export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo
         };
 
   return <FormatInfo>{
+    indent: opts.indent,
     sample,
     whiteSpace,
   };
@@ -93,8 +97,10 @@ export function getFormat(
   }
   const format = obj[ftmSymbol] as FormatInfo;
   // `0` and `""` are valid explicit requests for minified output, so only `undefined` falls back
-  // to the detected indentation. This matches `detectFormat`, which also tests for `undefined`.
-  const indent = opts?.indent ?? detectIndent(format.sample || "").indent;
+  // to the parse-time indent, then to the detected one. This matches `detectFormat`, which also
+  // tests for `undefined`. Without a sample (`preserveIndentation: false`), use the default.
+  const indent =
+    opts?.indent ?? format.indent ?? (format.sample ? detectIndent(format.sample).indent : 2);
   return {
     indent,
     whitespace: format.whiteSpace || { start: "", end: "" },
