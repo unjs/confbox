@@ -196,6 +196,33 @@ describe("confbox", () => {
       });
     }
 
+    // Whitespace-only lines used to be counted as indented lines, and leading padding could fill
+    // the whole sample, so nested values came back with the padding's width as indent.
+    it("yaml ignores leading padding when detecting indent", () => {
+      const text = " ".repeat(5) + "\nmeta:\n  a: 1\n";
+      expect(confbox.stringifyYAML(confbox.parseYAML(text))).toBe(text);
+    });
+
+    it("yaml ignores leading padding longer than the sample", () => {
+      const text = " ".repeat(2000) + "\nmeta:\n    a: 1\n";
+      expect(confbox.stringifyYAML(confbox.parseYAML(text))).toBe(text);
+    });
+
+    it("yaml ignores whitespace-only lines when detecting indent", () => {
+      const text = "a:\n  b: 1\n     \n  c: 2\n";
+      expect(confbox.stringifyYAML(confbox.parseYAML(text))).toBe("a:\n  b: 1\n  c: 2\n");
+    });
+
+    it("json ignores leading padding when detecting indent", () => {
+      const text = "   \n\t\n" + '{\n    "a": 1\n}\n';
+      expect(confbox.stringifyJSON(confbox.parseJSON(text))).toBe(text);
+    });
+
+    it("json keeps the indent of a padded first line", () => {
+      const text = '  {\n    "a": 1\n  }';
+      expect(confbox.stringifyJSON(confbox.parseJSON(text))).toBe('  {\n  "a": 1\n}');
+    });
+
     it("json keeps a parse-time indent of 0", () => {
       expect(confbox.stringifyJSON(confbox.parseJSON('{\n  "a": 1\n}', { indent: 0 }))).toBe(
         '{"a":1}',

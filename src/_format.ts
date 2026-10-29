@@ -38,6 +38,7 @@ const ftmSymbol = Symbol.for("__confbox_fmt__");
 
 // Note: `\s` matches `U+FEFF`, so a leading BOM is captured (and later restored) as whitespace.
 const WhitespaceStartRe = /^(\s+)/;
+const BlankLineRe = /^[ \t]+(?=\r?$)/gm;
 
 /**
  * Removes a leading UTF-8 BOM (`U+FEFF`) so that upstream parsers never see it.
@@ -49,11 +50,24 @@ export function stripBOM(text: string): string {
   return text.charCodeAt(0) === 0xfe_ff ? text.slice(1) : text;
 }
 
+/**
+ * Takes the sample used to detect indentation, starting at the first line with content so that
+ * leading padding (e.g. an SFC block padded with spaces) does not fill it.
+ *
+ * Whitespace-only lines are emptied: `detect-indent` skips empty lines but would count these as
+ * indented ones.
+ */
+function indentSample(text: string, size: number): string {
+  const leading = WhitespaceStartRe.exec(text)?.[0] || "";
+  const start = leading.lastIndexOf("\n") + 1;
+  return text.slice(start, start + size).replace(BlankLineRe, "");
+}
+
 export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo {
   // Keep ref to a sample of the original text only if need to later detect indent to reduce memory usage.
   const sample =
     opts.indent === undefined && opts.preserveIndentation !== false
-      ? stripBOM(text).slice(0, opts?.sampleSize || 1024)
+      ? indentSample(stripBOM(text), opts?.sampleSize || 1024)
       : undefined;
 
   const whiteSpace =
