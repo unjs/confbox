@@ -92,7 +92,9 @@ export function getFormat(
     return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" } };
   }
   const format = obj[ftmSymbol] as FormatInfo;
-  const indent = opts?.indent || detectIndent(format.sample || "").indent;
+  // `0` and `""` are valid explicit requests for minified output, so only `undefined` falls back
+  // to the detected indentation. This matches `detectFormat`, which also tests for `undefined`.
+  const indent = opts?.indent ?? detectIndent(format.sample || "").indent;
   return {
     indent,
     whitespace: format.whiteSpace || { start: "", end: "" },
