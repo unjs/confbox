@@ -56,6 +56,29 @@ describe("confbox", () => {
       );
     });
 
+    it("stringify nested values added to a flat document", () => {
+      const obj = confbox.parseYAML<any>("a: 1\n");
+      obj.b = { c: [1, 2] };
+      const str = confbox.stringifyYAML(obj);
+      expect(str).toBe("a: 1\nb:\n  c:\n    - 1\n    - 2\n");
+      expect(confbox.parseYAML(str)).toEqual({ a: 1, b: { c: [1, 2] } });
+    });
+
+    it("stringify nested values added to a flat sequence", () => {
+      const arr = confbox.parseYAML<any[]>("- a\n- b\n");
+      arr.push({ c: [1] });
+      const str = confbox.stringifyYAML(arr);
+      expect(str).toBe("- a\n- b\n- c:\n    - 1\n");
+      expect(confbox.parseYAML(str)).toEqual(["a", "b", { c: [1] }]);
+    });
+
+    it("stringify with an explicit zero indent", () => {
+      const obj = confbox.parseYAML<any>("a: 1\n");
+      obj.b = { c: 1 };
+      const str = confbox.stringifyYAML(obj, { indent: 0 });
+      expect(confbox.parseYAML(str)).toEqual({ a: 1, b: { c: 1 } });
+    });
+
     it("throws YAMLException", () => {
       expect(() => confbox.parseYAML("a: 1\na: 2")).toThrow(confboxYaml.YAMLException);
     });
