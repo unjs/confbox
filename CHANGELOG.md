@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.3.2
+
+[compare changes](https://github.com/unjs/confbox/compare/v0.3.1...v0.3.2)
+
+### 🔥 Performance
+
+- **format:** Capture trailing whitespace in linear time ([65f414f](https://github.com/unjs/confbox/commit/65f414f))
+
+### 🩹 Fixes
+
+- **yaml:** Use a non-zero indent when stringifying flat documents ([#103](https://github.com/unjs/confbox/pull/103))
+- **format:** Honor an explicit indent of `0` or `""` on parsed values ([#99](https://github.com/unjs/confbox/pull/99))
+- **format:** Keep parse-time `indent` / `preserveIndentation: false` on stringify ([a91779e](https://github.com/unjs/confbox/commit/a91779e))
+- **format:** Ignore blank lines when detecting indent ([0b8a560](https://github.com/unjs/confbox/commit/0b8a560))
+
+### 🏡 Chore
+
+- Update deps ([d978538](https://github.com/unjs/confbox/commit/d978538))
+- Update vitest to v5 ([05363ab](https://github.com/unjs/confbox/commit/05363ab))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Mochammad Fadhlan Al-Ghiffari ([@MFA-G](https://github.com/MFA-G))
+- Raphael Fakhri <rjf11@mail.aub.edu>
+
 ## v0.3.1
 
 [compare changes](https://github.com/unjs/confbox/compare/v0.3.0...v0.3.1)
