@@ -79,6 +79,12 @@ describe("confbox", () => {
       expect(confbox.parseYAML(str)).toEqual({ a: 1, b: { c: 1 } });
     });
 
+    // A quadratic trailing-whitespace scan takes seconds here and hits the test timeout (#104).
+    it("parses a long whitespace run before the document", () => {
+      const input = " ".repeat(200_000) + "\nmeta:\n  a: 1\n";
+      expect(confbox.parseYAML(input)).toEqual({ meta: { a: 1 } });
+    });
+
     it("throws YAMLException", () => {
       expect(() => confbox.parseYAML("a: 1\na: 2")).toThrow(confboxYaml.YAMLException);
     });

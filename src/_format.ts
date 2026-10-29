@@ -38,7 +38,6 @@ const ftmSymbol = Symbol.for("__confbox_fmt__");
 
 // Note: `\s` matches `U+FEFF`, so a leading BOM is captured (and later restored) as whitespace.
 const WhitespaceStartRe = /^(\s+)/;
-const WhitespaceEndRe = /(\s+)$/;
 
 /**
  * Removes a leading UTF-8 BOM (`U+FEFF`) so that upstream parsers never see it.
@@ -62,7 +61,9 @@ export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo
       ? undefined
       : {
           start: WhitespaceStartRe.exec(text)?.[0] || "",
-          end: WhitespaceEndRe.exec(text)?.[0] || "",
+          // `trimEnd()` strips the same set as `\s`, but in linear time: an unanchored `/(\s+)$/`
+          // is quadratic on long whitespace runs that are not at the end (#104).
+          end: text.slice(text.trimEnd().length),
         };
 
   return <FormatInfo>{
