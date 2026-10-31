@@ -38,7 +38,7 @@ export function parseYAML<T = unknown>(text: string, options?: YAMLParseOptions)
  * @returns The YAML string converted from the JavaScript value.
  */
 export function stringifyYAML(value: any, options?: YAMLStringifyOptions): string {
-  const format = getFormat(value, { preserveIndentation: false });
+  const format = getFormat(value, options);
   const detectedIndent = typeof format.indent === "string" ? format.indent.length : format.indent;
   const str = dump(value, {
     ...options,
