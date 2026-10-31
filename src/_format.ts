@@ -115,9 +115,15 @@ export function getFormat(
   // to the parse-time indent, then to the detected one. This matches `detectFormat`, which also
   // tests for `undefined`. Without a sample (`preserveIndentation: false`), use the default.
   const indent =
-    opts?.indent ?? format.indent ?? (format.sample ? detectIndent(format.sample).indent : 2);
+    opts?.indent ??
+    (opts?.preserveIndentation === false
+      ? 2
+      : (format.indent ?? (format.sample ? detectIndent(format.sample).indent : 2)));
   return {
     indent,
-    whitespace: format.whiteSpace || { start: "", end: "" },
+    whitespace:
+      opts?.preserveWhitespace === false
+        ? { start: "", end: "" }
+        : format.whiteSpace || { start: "", end: "" },
   };
 }
