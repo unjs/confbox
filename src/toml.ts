@@ -29,6 +29,6 @@ export function parseTOML<T = unknown>(text: string): T {
  */
 export function stringifyTOML(value: any): string {
   const format = getFormat(value, { preserveIndentation: false });
-  const str = stringify(value);
+  const str = stringify(value).trimEnd();
   return format.whitespace.start + str + format.whitespace.end;
 }
