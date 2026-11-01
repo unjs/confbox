@@ -100,6 +100,10 @@ export function storeFormat(text: string, obj: any, opts?: FormatOptions): void 
   });
 }
 
+export function hasFormat(obj: any): boolean {
+  return !!obj && typeof obj === "object" && ftmSymbol in obj;
+}
+
 export function getFormat(
   obj: any,
   opts?: FormatOptions,
@@ -107,7 +111,7 @@ export function getFormat(
   indent: string | number | undefined;
   whitespace: { start: string; end: string };
 } {
-  if (!obj || typeof obj !== "object" || !(ftmSymbol in obj)) {
+  if (!hasFormat(obj)) {
     return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" } };
   }
   const format = obj[ftmSymbol] as FormatInfo;
