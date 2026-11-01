@@ -1,4 +1,4 @@
-import { getFormat, storeFormat, stripBOM } from "./_format";
+import { getFormat, hasFormat, storeFormat, stripBOM } from "./_format";
 import { parse, stringify } from "smol-toml";
 
 // Source: https://github.com/squirrelchat/smol-toml
@@ -29,6 +29,6 @@ export function parseTOML<T = unknown>(text: string): T {
  */
 export function stringifyTOML(value: any): string {
   const format = getFormat(value, { preserveIndentation: false });
-  const str = stringify(value).trimEnd();
-  return format.whitespace.start + str + format.whitespace.end;
+  const str = stringify(value);
+  return hasFormat(value) ? format.whitespace.start + str.trimEnd() + format.whitespace.end : str;
 }
