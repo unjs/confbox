@@ -1,4 +1,4 @@
-import { getFormat, storeFormat, stripBOM, type FormatOptions } from "./_format";
+import { getFormat, storeFormat, stripBOM, type FormatOptions, withNewline } from "./_format";
 
 /**
  * Converts a [JSON](https://www.json.org/json-en.html) string into an object.
@@ -19,7 +19,7 @@ export function parseJSON<T = unknown>(text: string, options?: JSONParseOptions)
 export function stringifyJSON(value: any, options?: JSONStringifyOptions): string {
   const format = getFormat(value, options);
   const str = JSON.stringify(value, options?.replacer, format.indent);
-  return format.whitespace.start + str + format.whitespace.end;
+  return format.whitespace.start + withNewline(str, format.newline) + format.whitespace.end;
 }
 
 // -- types --

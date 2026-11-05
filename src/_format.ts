@@ -4,6 +4,8 @@ export interface FormatInfo {
   indent?: string | number;
   sample?: string;
   whiteSpace?: { start: string; end: string };
+  /** Line ending of the original text, only stored when it is not `\n`. */
+  newline?: "\r\n";
 }
 
 export interface FormatOptions {
@@ -84,7 +86,21 @@ export function detectFormat(text: string, opts: FormatOptions = {}): FormatInfo
     indent: opts.indent,
     sample,
     whiteSpace,
+    newline: detectNewline(text),
   };
+}
+
+/** Returns `"\r\n"` when the first line of `text` ends with CRLF. */
+function detectNewline(text: string): "\r\n" | undefined {
+  const lf = text.indexOf("\n");
+  return lf > 0 && text[lf - 1] === "\r" ? "\r\n" : undefined;
+}
+
+/**
+ * Converts the line endings of serializer output (which always uses `\n`) to `newline`.
+ */
+export function withNewline(str: string, newline: string): string {
+  return newline === "\n" ? str : str.replace(/\r?\n/g, newline);
 }
 
 export function storeFormat(text: string, obj: any, opts?: FormatOptions): void {
@@ -106,9 +122,10 @@ export function getFormat(
 ): {
   indent: string | number | undefined;
   whitespace: { start: string; end: string };
+  newline: string;
 } {
   if (!obj || typeof obj !== "object" || !(ftmSymbol in obj)) {
-    return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" } };
+    return { indent: opts?.indent ?? 2, whitespace: { start: "", end: "" }, newline: "\n" };
   }
   const format = obj[ftmSymbol] as FormatInfo;
   // `0` and `""` are valid explicit requests for minified output, so only `undefined` falls back
@@ -119,5 +136,6 @@ export function getFormat(
   return {
     indent,
     whitespace: format.whiteSpace || { start: "", end: "" },
+    newline: format.newline || "\n",
   };
 }
