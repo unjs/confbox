@@ -1,4 +1,4 @@
-import { getFormat, storeFormat, stripBOM, type FormatOptions } from "./_format";
+import { getFormat, storeFormat, stripBOM, type FormatOptions, withNewline } from "./_format";
 import parse from "json5/lib/parse.js";
 import stringify from "json5/lib/stringify";
 
@@ -28,7 +28,7 @@ export function parseJSON5<T = unknown>(text: string, options?: JSON5ParseOption
 export function stringifyJSON5(value: any, options?: JSON5StringifyOptions): string {
   const format = getFormat(value, options);
   const str = stringify(value, options?.replacer, format.indent);
-  return format.whitespace.start + str + format.whitespace.end;
+  return format.whitespace.start + withNewline(str, format.newline) + format.whitespace.end;
 }
 
 // --- Types ---

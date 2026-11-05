@@ -5,7 +5,7 @@ Compact YAML / TOML / JSONC / JSON5 / INI / JSON parser + serializer. Zero runti
 ## Layout
 
 - `src/<format>.ts` — one file per format, each exports `parse<FMT>` / `stringify<FMT>` + its option types. Thin wrapper over an upstream lib.
-- `src/_format.ts` — style preservation. `storeFormat()` attaches a non-enumerable `Symbol.for("__confbox_fmt__")` (indent sample + leading/trailing whitespace) on parse; `getFormat()` reads it back on stringify.
+- `src/_format.ts` — style preservation. `storeFormat()` attaches a non-enumerable `Symbol.for("__confbox_fmt__")` (indent sample + leading/trailing whitespace + line ending) on parse; `getFormat()` reads it back on stringify.
 - `src/index.ts` — re-exports only. `test/index.test.ts` + `test/fixtures.mjs`, `test/bench.mjs`.
 
 Upstream libs: yaml→`js-yaml`, toml→`smol-toml`, jsonc→`jsonc-parser`, json5→`json5` (deep imports `json5/lib/*`), ini→`ini`, json→native.

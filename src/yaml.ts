@@ -1,5 +1,5 @@
 import { load, dump, YAMLException } from "js-yaml";
-import { type FormatOptions, getFormat, storeFormat, stripBOM } from "./_format";
+import { type FormatOptions, getFormat, storeFormat, stripBOM, withNewline } from "./_format";
 
 // Source: https://github.com/nodeca/js-yaml
 // Types:  https://github.com/nodeca/js-yaml/blob/master/dist/js-yaml.d.ts
@@ -45,7 +45,7 @@ export function stringifyYAML(value: any, options?: YAMLStringifyOptions): strin
     // A flat document has no indentation to detect, but YAML needs a non-zero indent for nesting.
     indent: options?.indent || detectedIndent || 2,
   });
-  return format.whitespace.start + str.trim() + format.whitespace.end;
+  return format.whitespace.start + withNewline(str.trim(), format.newline) + format.whitespace.end;
 }
 
 /**

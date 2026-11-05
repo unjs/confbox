@@ -141,6 +141,35 @@ describe("confbox", () => {
     });
   });
 
+  describe("line endings", () => {
+    const roundTrip = {
+      json: [confbox.parseJSON, confbox.stringifyJSON],
+      jsonc: [confbox.parseJSONC, confbox.stringifyJSONC],
+      json5: [confbox.parseJSON5, confbox.stringifyJSON5],
+      yaml: [confbox.parseYAML, confbox.stringifyYAML],
+      toml: [confbox.parseTOML, confbox.stringifyTOML],
+    } as const;
+
+    for (const [format, [parse, stringify]] of Object.entries(roundTrip)) {
+      const fixture = (fixtures as Record<string, string>)[format].trim() + "\n";
+      const crlf = fixture.replaceAll("\n", "\r\n");
+
+      it(`${format} keeps CRLF line endings when stringifying back`, () => {
+        const output = stringify(parse(crlf));
+        expect(output).toBe(stringify(parse(fixture)).replaceAll("\n", "\r\n"));
+        expect(output.replaceAll("\r\n", "")).not.toContain("\n");
+      });
+
+      it(`${format} keeps LF line endings when stringifying back`, () => {
+        expect(stringify(parse(fixture))).not.toContain("\r");
+      });
+    }
+
+    it("uses LF for values that were not parsed", () => {
+      expect(confbox.stringifyJSON({ a: [1, 2] })).not.toContain("\r");
+    });
+  });
+
   describe("indent", () => {
     // `stringifyJSON({ a: 1 }, { indent: 0 })` has always minified, matching `JSON.stringify`.
     // On a value from `parse*` the stored format used to win because `0` is falsy, so the same
