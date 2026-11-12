@@ -41,8 +41,8 @@
   },
   "devDependencies": {
     "@types/ini": "^4.1.1",
-    "@types/node": "^26.6.5",
-    "@vitest/coverage-v8": "^5.0.5",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.1.0",
     "automd": "^0.4.3",
     "changelogen": "^0.6.2",
     "detect-indent": "^7.0.2",
@@ -54,14 +54,14 @@
     "jsonc-parser": "^3.3.1",
     "mitata": "^1.0.34",
     "obuild": "^0.4.45",
-    "oxfmt": "^0.75.0",
-    "oxlint": "^1.90.0",
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0",
     "smol-toml": "^1.9.1",
     "strip-json-comments": "^5.0.3",
     "toml": "^5.0.1",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.5",
+    "vitest": "^5.1.0",
     "yaml": "^2.9.1"
   },
-  "packageManager": "pnpm@11.25.0"
+  "packageManager": "pnpm@11.28.11"
 }
